@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Megavarshan A - AI Research Engineer</title>
+    <meta name="description" content="AI Research Engineer specializing in disaster management, healthcare AI, and sustainable deep learning systems">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white font-inter antialiased">
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#home" class="text-xl font-bold text-white">MA</a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-sm text-zinc-400 hover:text-white transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-sm text-zinc-400 hover:text-white transition-colors">About</a>
+                    <a href="#skills" class="nav-link text-sm text-zinc-400 hover:text-white transition-colors">Skills</a>
+                    <a href="#achievements" class="nav-link text-sm text-zinc-400 hover:text-white transition-colors">Achievements</a>
+                    <a href="#projects" class="nav-link text-sm text-zinc-400 hover:text-white transition-colors">Projects</a>
+                    <a href="#experience" class="nav-link text-sm text-zinc-400 hover:text-white transition-colors">Experience</a>
+                    <a href="#certifications" class="nav-link text-sm text-zinc-400 hover:text-white transition-colors">Certifications</a>
+                    <a href="#contact" class="nav-link text-sm text-zinc-400 hover:text-white transition-colors">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-white hover:text-zinc-300 transition-colors">
+                    <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden bg-zinc-900/95 backdrop-blur-md border-t border-zinc-800">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#home" class="mobile-nav-link block text-zinc-400 hover:text-white transition-colors py-2">Home</a>
+                <a href="#about" class="mobile-nav-link block text-zinc-400 hover:text-white transition-colors py-2">About</a>
+                <a href="#skills" class="mobile-nav-link block text-zinc-400 hover:text-white transition-colors py-2">Skills</a>
+                <a href="#achievements" class="mobile-nav-link block text-zinc-400 hover:text-white transition-colors py-2">Achievements</a>
+                <a href="#projects" class="mobile-nav-link block text-zinc-400 hover:text-white transition-colors py-2">Projects</a>
+                <a href="#experience" class="mobile-nav-link block text-zinc-400 hover:text-white transition-colors py-2">Experience</a>
+                <a href="#certifications" class="mobile-nav-link block text-zinc-400 hover:text-white transition-colors py-2">Certifications</a>
+                <a href="#contact" class="mobile-nav-link block text-zinc-400 hover:text-white transition-colors py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen relative flex items-center justify-center overflow-hidden pt-16 md:pt-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"></div>
+        <div class="absolute inset-0 grid-background opacity-40"></div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="space-y-8 md:space-y-12">
+                <div class="text-center space-y-6">
+                    <div class="inline-block">
+                        <span class="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium">
+                            AI Research Engineer
+                        </span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+                        Megavarshan A
+                    </h1>
+
+                    <p class="text-lg sm:text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                        Building intelligent systems for sustainability, resilience, and real-world impact.
+                    </p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                    <div class="card bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-lg p-6 hover:bg-slate-900/70 transition-all duration-300 hover:scale-105">
+                        <div class="space-y-2">
+                            <div class="text-3xl">🌪️</div>
+                            <p class="text-sm text-slate-300 font-medium">Disaster Intelligence & Spatial AI</p>
+                        </div>
+                    </div>
+
+                    <div class="card bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-lg p-6 hover:bg-slate-900/70 transition-all duration-300 hover:scale-105">
+                        <div class="space-y-2">
+                            <div class="text-3xl">☁️</div>
+                            <p class="text-sm text-slate-300 font-medium">Cloud-Native ML Systems</p>
+                        </div>
+                    </div>
+
+                    <div class="card bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-lg p-6 hover:bg-slate-900/70 transition-all duration-300 hover:scale-105">
+                        <div class="space-y-2">
+                            <div class="text-3xl">🧬</div>
+                            <p class="text-sm text-slate-300 font-medium">Healthcare AI & Medical Intelligence</p>
+                        </div>
+                    </div>
+
+                    <div class="card bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-lg p-6 hover:bg-slate-900/70 transition-all duration-300 hover:scale-105">
+                        <div class="space-y-2">
+                            <div class="text-3xl">🧠</div>
+                            <p class="text-sm text-slate-300 font-medium">Deep Learning & Multimodal AI</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scroll Button -->
+                <div class="flex justify-center pt-8">
+                    <a href="#about" class="animate-bounce hover:scale-110 transition-transform duration-300">
+                        <div class="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-full p-4 hover:bg-slate-900/70 transition-colors">
+                            <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-black to-gray-900"></div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-6">
+            <div class="fade-in-section">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Profile Image -->
+                    <div class="flex justify-center lg:justify-start">
+                        <div class="relative group">
+                            <div class="absolute -inset-4 bg-white/5 backdrop-blur-md rounded-full opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                            <div class="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden border-4 border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105">
+                                <img
+                                    src="public/images/profile-photo.jpeg"
+                                    alt="AI Research Engineer professional headshot"
+                                    class="w-full h-full object-cover scale-125"
+                                    style="object-position: center 30%"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About Content -->
+                    <div class="space-y-6 text-center lg:text-left">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-8 text-white">About Me</h2>
+
+                        <div class="space-y-4 text-slate-300 leading-relaxed">
+                            <p>
+                                I'm an <strong class="text-white">AI Research Engineer</strong> passionate about building
+                                intelligent systems that address real-world challenges in
+                                <strong class="text-white">sustainability, disaster management, and resilience</strong>.
+                            </p>
+                            <p>
+                                My work spans
+                                <strong class="text-white">machine learning, deep learning, geospatial AI, and cloud computing</strong>
+                                —combining research rigor with practical engineering to create solutions that matter.
+                            </p>
+                            <p>
+                                Currently, I'm focused on leveraging
+                                <strong class="text-white">satellite imagery, computer vision, and predictive analytics</strong>
+                                to help communities prepare for and respond to natural disasters more effectively.
+                            </p>
+                        </div>
+
+                        <div class="flex justify-center lg:justify-start">
+                            <a href="#contact" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg mt-8 group transition-all duration-300 hover:scale-105">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                Get In Touch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-3 mb-4">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold">Skills & Expertise</h2>
+            </div>
+            <p class="text-slate-400 text-base sm:text-lg mb-8 sm:mb-10 md:mb-12 max-w-2xl">
+                A comprehensive toolkit for building intelligent systems from research to production
+            </p>
+
+            <!-- Tabs -->
+            <div class="tabs-container">
+                <div class="tabs-list grid grid-cols-2 lg:grid-cols-4 gap-2 mb-8 bg-slate-900/30 p-1 rounded-lg">
+                    <button class="tab-button active flex items-center justify-center gap-2 py-3 px-4 rounded-md text-sm font-medium transition-all" data-tab="aiml">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                        <span>AI & ML</span>
+                    </button>
+                    <button class="tab-button flex items-center justify-center gap-2 py-3 px-4 rounded-md text-sm font-medium transition-all" data-tab="programming">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                        <span class="hidden sm:inline">Programming & Tools</span>
+                        <span class="sm:hidden">Programming</span>
+                    </button>
+                    <button class="tab-button flex items-center justify-center gap-2 py-3 px-4 rounded-md text-sm font-medium transition-all" data-tab="dataeng">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7C5 4 4 5 4 7z"></path>
+                        </svg>
+                        <span class="hidden sm:inline">Data Engineering</span>
+                        <span class="sm:hidden">Data Eng</span>
+                    </button>
+                    <button class="tab-button flex items-center justify-center gap-2 py-3 px-4 rounded-md text-sm font-medium transition-all" data-tab="cloud">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                        </svg>
+                        <span>Cloud</span>
+                    </button>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="tab-content active" id="aiml-content">
+                    <div class="bg-slate-900/30 backdrop-blur-sm border border-slate-800/50 rounded-xl p-6 sm:p-8">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="p-3 rounded-lg bg-purple-500/10 text-purple-400">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold">AI & ML</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2 sm:gap-3">
+                            <span class="skill-badge">Deep Learning</span>
+                            <span class="skill-badge">Neural Networks</span>
+                            <span class="skill-badge">Transformers</span>
+                            <span class="skill-badge">GANs</span>
+                            <span class="skill-badge">ConvNeXt</span>
+                            <span class="skill-badge">Image Processing</span>
+                            <span class="skill-badge">Computer Vision</span>
+                            <span class="skill-badge">Natural Language Processing</span>
+                            <span class="skill-badge">TensorFlow</span>
+                            <span class="skill-badge">Langchain</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="programming-content">
+                    <div class="bg-slate-900/30 backdrop-blur-sm border border-slate-800/50 rounded-xl p-6 sm:p-8">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="p-3 rounded-lg bg-blue-500/10 text-blue-400">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold">Programming & Tools</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2 sm:gap-3">
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">C++</span>
+                            <span class="skill-badge">Java</span>
+                            <span class="skill-badge">SQL</span>
+                            <span class="skill-badge">OOP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="dataeng-content">
+                    <div class="bg-slate-900/30 backdrop-blur-sm border border-slate-800/50 rounded-xl p-6 sm:p-8">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="p-3 rounded-lg bg-green-500/10 text-green-400">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7C5 4 4 5 4 7z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold">Data Engineering</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2 sm:gap-3">
+                            <span class="skill-badge">Power BI</span>
+                            <span class="skill-badge">Docker</span>
+                            <span class="skill-badge">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="cloud-content">
+                    <div class="bg-slate-900/30 backdrop-blur-sm border border-slate-800/50 rounded-xl p-6 sm:p-8">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="p-3 rounded-lg bg-cyan-500/10 text-cyan-400">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold">Cloud</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2 sm:gap-3">
+                            <span class="skill-badge">AWS Lambda</span>
+                            <span class="skill-badge">AWS IAM</span>
+                            <span class="skill-badge">AWS Bedrock</span>
+                            <span class="skill-badge">AWS SageMaker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-3 mb-4">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold">Achievements</h2>
+            </div>
+            <p class="text-slate-400 text-base sm:text-lg mb-8 sm:mb-10 md:mb-12 max-w-2xl">
+                Recognition for building impactful solutions at the intersection of AI and real-world challenges
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Achievement 1 - First Prize with Medal -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="block group">
+                    <div class="card bg-slate-900/30 backdrop-blur-sm border border-slate-800/50 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300 h-full relative">
+                        <!-- Golden Medal Stamp -->
+                        <div class="absolute top-4 right-4 z-20 bg-yellow-500 text-yellow-950 rounded-full p-3 shadow-lg rotate-12 group-hover:rotate-0 transition-transform duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                        </div>
+
+                        <div class="relative h-48 w-full overflow-hidden">
+                            <img src="public/images/ideas.png" alt="First Prize at Hybrid Hacks" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg sm:text-xl font-bold mb-2 flex items-start justify-between gap-2">
+                                <span>First Prize at Hybrid Hacks</span>
+                                <svg class="w-4 h-4 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </h3>
+                            <p class="text-slate-400 text-sm sm:text-base">AI Sustainability Hackathon</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Achievement 2 -->
+                <a href="https://www.linkedin.com/posts/megavarshan_top10winner-infosystechzooka-techzooka2025-activity-7369370990994206722-5YsR" target="_blank" rel="noopener noreferrer" class="block group">
+                    <div class="card bg-slate-900/30 backdrop-blur-sm border border-slate-800/50 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300 h-full">
+                        <div class="relative h-48 w-full overflow-hidden">
+                            <img src="public/images/growth.png" alt="Top 10 Finalist" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg sm:text-xl font-bold mb-2 flex items-start justify-between gap-2">
+                                <span>Top 10 Finalist at Infosys Techzooka</span>
+                                <svg class="w-4 h-4 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </h3>
+                            <p class="text-slate-400 text-sm sm:text-base">IITM PALS Hackathon 2025</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Achievement 3 -->
+                <a href="https://www.linkedin.com/posts/megavarshan_nationalwinners-seismohack-achievementunlocked-activity-7362874820130177024-lr-s" target="_blank" rel="noopener noreferrer" class="block group">
+                    <div class="card bg-slate-900/30 backdrop-blur-sm border border-slate-800/50 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300 h-full">
+                        <div class="relative h-48 w-full overflow-hidden">
+                            <img src="public/images/figma.png" alt="National Runner Up" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg sm:text-xl font-bold mb-2 flex items-start justify-between gap-2">
+                                <span>National Runner Up of SEISMO HACK 1.0</span>
+                                <svg class="w-4 h-4 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </h3>
+                            <p class="text-slate-400 text-sm sm:text-base">National Level Disaster Management Hackathon</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 bg-slate-900/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-3 mb-4">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold">Featured Projects</h2>
+            </div>
+            <p class="text-slate-400 text-base sm:text-lg mb-8 sm:mb-10 md:mb-12 max-w-2xl">
+                Building intelligent systems that address sustainability and energy challenges with real-world impact
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="card bg-slate-900/30 backdrop-blur-sm border border-slate-800/50 rounded-xl p-6 sm:p-8 group hover:border-blue-500/30 transition-all">
+                    <div class="flex items-start justify-between mb-4">
+                        <svg class="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                        <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20 transition-colors">
+                            <span class="text-xs font-mono text-blue-500">01</span>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Biomass Smart Cultivation System</h3>
+                    <p class="text-slate-400 text-base leading-relaxed mb-4">
+                        An AI-powered cultivation management platform that optimizes biomass yield, resource utilization, and long-term soil sustainability using predictive modeling and data-driven decision systems.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800/50 text-slate-300 rounded-full text-xs">Machine Learning</span>
+                        <span class="px-3 py-1 bg-slate-800/50 text-slate-300 rounded-full text-xs">Agriculture</span>
+                        <span class="px-3 py-1 bg-slate-800/50 text-slate-300 rounded-full text-xs">Sustainability</span>
+                        <span class="px-3 py-1 bg-slate-800/50 text-slate-300 rounded-full text-xs">IoT</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="card bg-slate-900/30 backdrop-blur-sm border border-slate-800/50 rounded-xl p-6 sm:p-8 group hover:border-blue-500/30 transition-all">
+                    <div class="flex items-start justify-between mb-4">
+                        <svg class="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20 transition-colors">
+                            <span class="text-xs font-mono text-blue-500">02</span>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Hybrid Renewable Energy Platform</h3>
+                    <p class="text-slate-400 text-base leading-relaxed mb-4">
+                        A hybrid solar–biomass–battery energy system designed for high-altitude and remote regions, focusing on seasonal adaptability, reliability, and off-grid deployment.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800/50 text-slate-300 rounded-full text-xs">Energy Systems</span>
+                        <span class="px-3 py-1 bg-slate-800/50 text-slate-300 rounded-full text-xs">IoT</span>
+                        <span class="px-3 py-1 bg-slate-800/50 text-slate-300 rounded-full text-xs">System Design</span>
+                        <span class="px-3 py-1 bg-slate-800/50 text-slate-300 rounded-full text-xs">Sustainability</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex items-center gap-3 mb-4">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold">Experience</h2>
+            </div>
+            <p class="text-slate-400 text-base sm:text-lg mb-8 sm:mb-10 md:mb-12 max-w-2xl">
+                Building and deploying AI systems that create real-world impact across research and industry
+            </p>
+
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-4 sm:left-6 md:left-8 top-0 bottom-0 w-0.5 timeline-line"></div>
+
+                <div class="space-y-8 sm:space-y-10 md:space-y-12">
+                    <!-- Experience 1 - Current -->
+                    <div class="relative pl-12 sm:pl-16 md:pl-20">
+                        <div class="absolute left-2.5 sm:left-3.5 md:left-5 top-2 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-blue-500 border-4 border-black pulse-dot"></div>
+
+                        <div class="card bg-slate-900/30 backdrop-blur-sm border border-slate-800/50 rounded-lg p-4 sm:p-6 md:p-8 hover:border-blue-500/30 transition-all duration-300">
+                            <div class="flex flex-col gap-3 sm:gap-4">
+                                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
+                                    <div class="flex-1">
+                                        <h3 class="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">Co-founder & AI Research Member</h3>
+                                        <p class="text-base sm:text-lg text-blue-500 font-medium">Foresight-X Lab</p>
+                                    </div>
+                                    <span class="w-fit px-3 py-1 bg-slate-800/50 text-slate-300 rounded-full text-xs sm:text-sm">Jan 2025 - Present</span>
+                                </div>
+                                <p class="text-sm sm:text-base text-slate-400 leading-relaxed">
+                                    Leading AI-driven projects in disaster management and resilience in collaboration with national agencies (DRDO, ARIES). Designing ML-based decision support systems and sustainable deep learning models for seismic risk, climate resilience, and geospatial intelligence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="relative pl-12 sm:pl-16 md:pl-20">
+                        <div class="absolute left-2.5 sm:left-3.5 md:left-5 top-2 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-blue-500 border-4 border-black"></div>
+
+                        <div class="card bg-slate-900/30 backdrop-blur-sm border border-slate-800/50 rounded-lg p-4 sm:p-6 md:p-8 hover:border-blue-500/30 transition-all duration-300">
+                            <div class="flex flex-col gap-3 sm:gap-4">
+                                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
+                                    <div class="flex-1">
+                                        <h3 class="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">AI Research Intern</h3>
+                                        <p class="text-base sm:text-lg text-blue-500 font-medium">NIT Trichy</p>
+                                    </div>
+                                    <span class="w-fit px-3 py-1 bg-slate-800/50 text-slate-300 rounded-full text-xs sm:text-sm">May 2025 - Nov 2025</span>
+                                </div>
+                                <p class="text-sm sm:text-base text-slate-400 leading-relaxed">
+                                    Developing an AI-powered skin cancer detection model using ConvNeXt and advanced medical signal features (MSFs) for robust classification.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3 -->
+                    <div class="relative pl-12 sm:pl-16 md:pl-20">
+                        <div class="absolute left-2.5 sm:left-3.5 md:left-5 top-2 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-blue-500 border-4 border-black"></div>
+
+                        <div class="card bg-slate-900/30 backdrop-blur-sm border border-slate-800/50 rounded-lg p-4 sm:p-6 md:p-8 hover:border-blue-500/30 transition-all duration-300">
+                            <div class="flex flex-col gap-3 sm:gap-4">
+                                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
+                                    <div class="flex-1">
+                                        <h3 class="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">AI Developer Intern</h3>
+                                        <p class="text-base sm:text-lg text-blue-500 font-medium">ATRIBS Software Systems (SHIELD Group Intl)</p>
+                                    </div>
+                                    <span class="w-fit px-3 py-1 bg-slate-800/50 text-slate-300 rounded-full text-xs sm:text-sm">Jun 2025 - Aug 2025</span>
+                                </div>
+                                <p class="text-sm sm:text-base text-slate-400 leading-relaxed">
+                                    Engineered data-driven AI models for business optimization and automation use cases. Delivered analytical insights and performance evaluations supporting strategic client operations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 bg-slate-900/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-3 mb-4">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold">Certifications</h2>
+            </div>
+            <p class="text-slate-400 text-base sm:text-lg mb-8 sm:mb-10 md:mb-12 max-w-2xl">
+                Continuous learning and professional development in AI and cloud technologies
+            </p>
+
+            <div class="space-y-8 sm:space-y-10 md:space-y-12">
+                <!-- Oracle Certifications -->
+                <div class="card bg-slate-900/30 backdrop-blur-sm border border-slate-800/50 rounded-xl overflow-hidden p-4 sm:p-6 md:p-8">
+                    <div class="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-white rounded-lg p-2 flex items-center justify-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle logo" class="w-full h-full object-contain" />
+                        </div>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold">Oracle</h3>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                        <div class="flex items-start gap-3 p-3 sm:p-4 rounded-lg bg-black/30 hover:bg-black/50 transition-colors">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <p class="text-sm sm:text-base leading-relaxed">OCI Certified Generative AI Professional</p>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 sm:p-4 rounded-lg bg-black/30 hover:bg-black/50 transition-colors">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <p class="text-sm sm:text-base leading-relaxed">Oracle Autonomous Database Cloud Certified</p>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 sm:p-4 rounded-lg bg-black/30 hover:bg-black/50 transition-colors">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <p class="text-sm sm:text-base leading-relaxed">Oracle AI Vector Search Certified</p>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 sm:p-4 rounded-lg bg-black/30 hover:bg-black/50 transition-colors">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <p class="text-sm sm:text-base leading-relaxed">Oracle APEX Cloud Developer Certified</p>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 sm:p-4 rounded-lg bg-black/30 hover:bg-black/50 transition-colors">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <p class="text-sm sm:text-base leading-relaxed">Oracle Cloud Infrastructure 2025 Certified Developer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AWS Certifications -->
+                <div class="card bg-slate-900/30 backdrop-blur-sm border border-slate-800/50 rounded-xl overflow-hidden p-4 sm:p-6 md:p-8">
+                    <div class="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-white rounded-lg p-2 flex items-center justify-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS logo" class="w-full h-full object-contain" />
+                        </div>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold">AWS</h3>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                        <div class="flex items-start gap-3 p-3 sm:p-4 rounded-lg bg-black/30 hover:bg-black/50 transition-colors">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <p class="text-sm sm:text-base leading-relaxed">AWS Certified Cloud Practitioner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-8 sm:mb-10 md:mb-12">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Let's Build Together</h2>
+                <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto px-4">
+                    Interested in collaborating on AI research, sustainability projects, or innovative solutions? Let's connect.
+                </p>
+            </div>
+
+            <div class="card bg-slate-900/30 backdrop-blur-sm border border-slate-800/50 rounded-xl">
+                <div class="text-center p-4 sm:p-6 border-b border-slate-800">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-2">Get In Touch</h3>
+                    <p class="text-sm sm:text-base text-slate-400">
+                        I'm always open to discussing new projects and opportunities
+                    </p>
+                </div>
+                <div class="p-4 sm:p-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                        <!-- Email -->
+                        <a href="mailto:megavarshan1616@gmail.com" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-2 sm:gap-3 py-4 sm:py-6 px-4 rounded-lg border border-slate-800 bg-transparent hover:bg-slate-800/30 hover:border-blue-500/30 transition-all">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <div class="text-center">
+                                <div class="font-semibold text-sm">Email</div>
+                                <div class="text-xs text-slate-400 mt-1 break-all">megavarshan1616@gmail.com</div>
+                            </div>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com/in/megavarshan" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-2 sm:gap-3 py-4 sm:py-6 px-4 rounded-lg border border-slate-800 bg-transparent hover:bg-slate-800/30 hover:border-blue-500/30 transition-all">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            <div class="text-center">
+                                <div class="font-semibold text-sm">LinkedIn</div>
+                                <div class="text-xs text-slate-400 mt-1">Connect on LinkedIn</div>
+                            </div>
+                        </a>
+
+                        <!-- GitHub -->
+                        <a href="https://github.com/Megavarshan" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-2 sm:gap-3 py-4 sm:py-6 px-4 rounded-lg border border-slate-800 bg-transparent hover:bg-slate-800/30 hover:border-blue-500/30 transition-all">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                            </svg>
+                            <div class="text-center">
+                                <div class="font-semibold text-sm">GitHub</div>
+                                <div class="text-xs text-slate-400 mt-1">View my code</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 relative">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-slate-900"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <!-- Navigation -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-white">Navigation</h3>
+                    <div class="space-y-3">
+                        <a href="#home" class="block text-slate-400 hover:text-white transition-colors">Home</a>
+                        <a href="#about" class="block text-slate-400 hover:text-white transition-colors">About</a>
+                        <a href="#skills" class="block text-slate-400 hover:text-white transition-colors">Skills</a>
+                        <a href="#projects" class="block text-slate-400 hover:text-white transition-colors">Projects</a>
+                        <a href="#experience" class="block text-slate-400 hover:text-white transition-colors">Experience</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-white">Quick Links</h3>
+                    <div class="space-y-3">
+                        <a href="#achievements" class="block text-slate-400 hover:text-white transition-colors">Achievements</a>
+                        <a href="#certifications" class="block text-slate-400 hover:text-white transition-colors">Certifications</a>
+                        <a href="#contact" class="block text-slate-400 hover:text-white transition-colors">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-white">Let's Connect</h3>
+                    <p class="text-slate-400 mb-4">
+                        Interested in collaborating on AI research or building impactful solutions?
+                    </p>
+                    <p class="text-slate-300 mb-6 font-semibold">megavarshan1616@gmail.com</p>
+
+                    <div class="flex space-x-4">
+                        <a href="https://linkedin.com/in/megavarshan" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-slate-800 hover:bg-slate-700 rounded-full flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/Megavarshan" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-slate-800 hover:bg-slate-700 rounded-full flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:megavarshan1616@gmail.com" class="w-10 h-10 bg-slate-800 hover:bg-slate-700 rounded-full flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="flex justify-center items-center pt-8 border-t border-slate-800">
+                <div class="text-slate-400 text-sm">
+                    © 2025 <span class="font-bold text-white">Megavarshan A</span> - AI Research Engineer
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
