@@ -1,6 +1,6 @@
 import { Section } from "./Section";
 import { Github, Linkedin, Mail, Download, Code2 } from "lucide-react";
-import resume from "@/assets/resume.pdf.asset.json";
+const resume = "/resume.pdf";
 
 const links = [
   { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/megavarshan", value: "linkedin.com/in/megavarshan" },
@@ -44,7 +44,7 @@ export function Contact() {
             ))}
           </ul>
           <a
-            href={resume.url}
+            href={resume}
             download
             target="_blank"
             rel="noreferrer"

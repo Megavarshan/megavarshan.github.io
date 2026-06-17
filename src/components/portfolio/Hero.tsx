@@ -1,8 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, Download, Sparkles, GraduationCap, FlaskConical, BrainCircuit } from "lucide-react";
-import photo from "@/assets/megavarshan.jpeg.asset.json";
-import resume from "@/assets/resume.pdf.asset.json";
-
+const photo = "/megavarshan.jpeg";
+const resume = "/resume.pdf";
 const stats = [
   { label: "AI Projects", value: "12+" },
   { label: "Internships", value: "3" },
@@ -78,7 +77,7 @@ export function Hero() {
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
             </a>
             <a
-              href={resume.url}
+              href={resume}
               download
               target="_blank"
               rel="noreferrer"
@@ -104,7 +103,7 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 0.3 }}
           className="flex justify-center lg:justify-end"
         >
-          <Portrait src={photo.url} />
+          <Portrait src={photo} />
         </motion.div>
       </div>
 
