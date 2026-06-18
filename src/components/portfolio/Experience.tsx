@@ -13,7 +13,7 @@ const items = [
   {
     role: "Computer Vision AI Developer Intern",
     org: "InfiniTraq AI · Griffin AI",
-    period: "2025",
+    period: "Dec 2025 - Jan 2026",
     points: [
       "Worked on real-time CCTV video analytics pipelines for enterprise use cases, including age & gender classification and theft detection using deep learning–based computer vision models.",
       "Built and integrated face and demographic analysis using MiVOLO and DeepFace, and optimized inference using a lightweight MobileNet-based model for edge-friendly deployment.",
@@ -23,7 +23,7 @@ const items = [
   {
     role: "AI Research Intern",
     org: "National Institute of Technology (NIT), Trichy",
-    period: "2025",
+    period: "June 2025 - Dec 2025",
     points: [
       "Built ConvNeXt-based deep learning pipelines for dermoscopic image classification.",
       "Designed multi-scale feature fusion combining image features with patient metadata.",
@@ -33,7 +33,7 @@ const items = [
   {
     role: "Developer Intern",
     org: "ATRIBS Software Systems",
-    period: "2024",
+    period: "June 2025 - July 2025",
     points: [
       "Built AI-driven automation workflows for enterprise-scale processing.",
       "Developed analytical pipelines that improved business optimization metrics.",

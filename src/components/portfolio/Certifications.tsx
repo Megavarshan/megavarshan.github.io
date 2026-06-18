@@ -2,13 +2,15 @@ import { Section } from "./Section";
 import { ShieldCheck } from "lucide-react";
 
 const certs = [
-  { name: "Oracle Autonomous Database Cloud 2025 Certified Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" },
-  { name: "Oracle APEX Cloud Developer Certified Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" },
-  { name: "OCI 2025 Certified Developer Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" },
-  { name: "Oracle AI Vector Search Certified Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" },
-  { name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
-  { name: "SAP Analytics Cloud Data Analyst", issuer: "SAP", logo: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" },
-  { name: "Salesforce AgentForce Specialist", issuer: "Salesforce", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" },
+  { name: "Oracle Autonomous Database Cloud 2025 Certified Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=8CC5915D1B50E14308B53F736FB45B5D09E0198AC513825D9599D6143EBF1970" },
+  { name: "Oracle APEX Cloud Developer Certified Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=9EEBB2EB670D8094A6D6855C7F52D883530A0A916942BA9370BCF7FBAABCCFDE" },
+  { name: "OCI 2025 Certified Developer Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=874772C2DEFDA06406A4951142FB8A99F3B5D5561753F2D2DD00F992756D591D" },
+  { name: "Oracle AI Vector Search Certified Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=B19DE67FD8255D837EA204F77BB72F588BB0991D90D3B32435402DB0B80A6228" },
+  { name: "OCI 2025 Certified Generative AI Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=C4E5A98DC05CF4DD0DB2EBDF2C196E443A54A37529338E3C07387838CF7BD991" },
+  { name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg", link: "https://www.credly.com/badges/f0e3e651-9a3c-4355-bff9-df63831f139d/public_url" },
+  { name: "SAP Certified - Data Analyst - SAP Analytics Cloud", issuer: "SAP", logo: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg", link: "https://www.credly.com/badges/aee95b54-a4a5-45b3-a0d8-f9d909341ed3" },
+  { name: "Salesforce AgentForce Specialist", issuer: "Salesforce", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg", credentialId: "7282784" },
+  { name: "Advanced Google Analytics", issuer: "Google Analytics Academy", logo: "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" },
 ];
 
 export function Certifications() {
@@ -19,23 +21,42 @@ export function Certifications() {
       title={<>Verified across <span className="text-gradient">AI, data, and cloud</span>.</>}
     >
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {certs.map((c) => (
-          <div key={c.name} className="glass glow-border group relative overflow-hidden rounded-2xl p-6">
-            <div className="flex items-start justify-between">
-              <div className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-[var(--neon)]/20 to-[var(--violet-glow)]/20 text-[var(--neon)] p-2">
-                {c.logo ? (
-                  <img src={c.logo} alt={c.issuer} className="h-full w-full object-contain filter brightness-0 invert opacity-80" />
-                ) : (
-                  <ShieldCheck className="h-5 w-5" />
-                )}
+        {certs.map((c) => {
+          const content = (
+            <>
+              <div className="flex items-start justify-between">
+                <div className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-[var(--neon)]/20 to-[var(--violet-glow)]/20 text-[var(--neon)] p-2">
+                  {c.logo ? (
+                    <img src={c.logo} alt={c.issuer} className="h-full w-full object-contain filter brightness-0 invert opacity-80" />
+                  ) : (
+                    <ShieldCheck className="h-5 w-5" />
+                  )}
+                </div>
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--neon)]">Verified</span>
               </div>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--neon)]">Verified</span>
+              <h3 className="mt-4 font-display text-base font-semibold leading-tight">{c.name}</h3>
+              <div className="mt-1 text-xs text-muted-foreground">{c.issuer}</div>
+              {c.credentialId && <div className="mt-1 text-xs text-muted-foreground">Credential ID: {c.credentialId}</div>}
+              <div className="pointer-events-none absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-[var(--neon)]/60 to-transparent opacity-0 transition group-hover:opacity-100" />
+            </>
+          );
+
+          const className = "glass glow-border group relative block overflow-hidden rounded-2xl p-6 transition hover:bg-white/5";
+
+          if (c.link) {
+            return (
+              <a key={c.name} href={c.link} target="_blank" rel="noreferrer" className={className}>
+                {content}
+              </a>
+            );
+          }
+
+          return (
+            <div key={c.name} className={className}>
+              {content}
             </div>
-            <h3 className="mt-4 font-display text-base font-semibold leading-tight">{c.name}</h3>
-            <div className="mt-1 text-xs text-muted-foreground">{c.issuer}</div>
-            <div className="pointer-events-none absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-[var(--neon)]/60 to-transparent opacity-0 transition group-hover:opacity-100" />
-          </div>
-        ))}
+          );
+        })}
       </div>
     </Section>
   );
