@@ -10,7 +10,7 @@ const certs = [
   { name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg", link: "https://www.credly.com/badges/f0e3e651-9a3c-4355-bff9-df63831f139d/public_url" },
   { name: "SAP Certified - Data Analyst - SAP Analytics Cloud", issuer: "SAP", logo: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg", link: "https://www.credly.com/badges/aee95b54-a4a5-45b3-a0d8-f9d909341ed3" },
   { name: "Salesforce AgentForce Specialist", issuer: "Salesforce", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg", credentialId: "7282784" },
-  { name: "Advanced Google Analytics", issuer: "Google Analytics Academy", logo: "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" },
+  { name: "Advanced Google Analytics", issuer: "Google Analytics Academy" },
 ];
 
 export function Certifications() {
@@ -32,16 +32,18 @@ export function Certifications() {
                     <ShieldCheck className="h-5 w-5" />
                   )}
                 </div>
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--neon)]">Verified</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--neon)] shrink-0">Verified</span>
               </div>
-              <h3 className="mt-4 font-display text-base font-semibold leading-tight">{c.name}</h3>
-              <div className="mt-1 text-xs text-muted-foreground">{c.issuer}</div>
-              {c.credentialId && <div className="mt-1 text-xs text-muted-foreground">Credential ID: {c.credentialId}</div>}
+              <div className="mt-4 flex flex-col flex-1">
+                <h3 className="font-display text-base font-semibold leading-tight">{c.name}</h3>
+                <div className="mt-1 text-xs text-muted-foreground">{c.issuer}</div>
+                {c.credentialId && <div className="mt-1 text-xs text-muted-foreground">Credential ID: {c.credentialId}</div>}
+              </div>
               <div className="pointer-events-none absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-[var(--neon)]/60 to-transparent opacity-0 transition group-hover:opacity-100" />
             </>
           );
 
-          const className = "glass glow-border group relative block overflow-hidden rounded-2xl p-6 transition hover:bg-white/5";
+          const className = "glass glow-border group relative flex flex-col h-full overflow-hidden rounded-2xl p-6 transition hover:bg-white/5";
 
           if (c.link) {
             return (
