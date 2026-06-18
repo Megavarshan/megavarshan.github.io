@@ -3,12 +3,11 @@ import { Section } from "./Section";
 const items = [
   {
     role: "AI Research Intern",
-    org: "National Institute of Technology (NIT), Trichy",
-    period: "2025",
+    org: "Ganpat University",
+    period: "Jan 2026 - Apr 2026",
     points: [
-      "Built ConvNeXt-based deep learning pipelines for dermoscopic image classification.",
-      "Designed multi-scale feature fusion combining image features with patient metadata.",
-      "Achieved 91% accuracy with optimized real-time inference and improved prediction reliability.",
+      "Developed an AI-powered single-image 2D/3D avatar generation pipeline using deep learning and computer vision techniques to create stylised avatars, 3D facial reconstructions, and animated outputs.",
+      "Optimised the system for efficient execution on low-resource hardware and enhanced facial realism through model fine-tuning and real-time customisation of facial parameters for digital avatar applications.",
     ],
   },
   {
@@ -16,9 +15,19 @@ const items = [
     org: "InfiniTraq AI · Griffin AI",
     period: "2025",
     points: [
-      "Engineered real-time video analytics with intelligent frame sampling.",
-      "Implemented multi-object tracking and event abstraction systems for live streams.",
-      "Optimized inference latency for scalable AI deployment at the edge.",
+      "Worked on real-time CCTV video analytics pipelines for enterprise use cases, including age & gender classification and theft detection using deep learning–based computer vision models.",
+      "Built and integrated face and demographic analysis using MiVOLO and DeepFace, and optimized inference using a lightweight MobileNet-based model for edge-friendly deployment.",
+      "Gained hands-on experience in end-to-end video analytics workflows (stream ingestion, detection, tracking, inference, and alerting) for large-scale surveillance systems.",
+    ],
+  },
+  {
+    role: "AI Research Intern",
+    org: "National Institute of Technology (NIT), Trichy",
+    period: "2025",
+    points: [
+      "Built ConvNeXt-based deep learning pipelines for dermoscopic image classification.",
+      "Designed multi-scale feature fusion combining image features with patient metadata.",
+      "Achieved 91% accuracy with optimized real-time inference and improved prediction reliability.",
     ],
   },
   {

@@ -4,8 +4,8 @@ const photo = "/megavarshan.jpeg";
 const resume = "/resume.pdf";
 const stats = [
   { label: "AI Projects", value: "12+" },
-  { label: "Internships", value: "3" },
-  { label: "Certifications", value: "6" },
+  { label: "Internships", value: "6" },
+  { label: "Certifications", value: "8" },
   { label: "LeetCode Solved", value: "822+" },
 ];
 
@@ -183,9 +183,10 @@ function Portrait({ src }: { src: string }) {
       </div>
 
       {/* Floating tags */}
-      <FloatingTag className="left-[-12%] top-[18%]" delay={0}>AI · ML</FloatingTag>
-      <FloatingTag className="right-[-10%] top-[35%]" delay={1.2}>Computer Vision</FloatingTag>
-      <FloatingTag className="left-[-6%] bottom-[15%]" delay={2.4}>GenAI · LLM</FloatingTag>
+      <FloatingTag className="left-[-12%] top-[18%]" delay={0}>Data</FloatingTag>
+      <FloatingTag className="right-[-10%] top-[25%]" delay={1.2}>AI ML</FloatingTag>
+      <FloatingTag className="left-[-6%] bottom-[20%]" delay={2.4}>Gen AI LLM</FloatingTag>
+      <FloatingTag className="right-[5%] bottom-[10%]" delay={3.6}>Cloud</FloatingTag>
 
       {/* Orbiting nodes */}
       <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full overflow-visible">

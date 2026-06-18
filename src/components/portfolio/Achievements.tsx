@@ -3,6 +3,18 @@ import { Trophy, Medal, Code2 } from "lucide-react";
 
 const items = [
   {
+    icon: Trophy,
+    title: "Winner of Hybrid Hacks 2024",
+    sub: "AARUUSH · SRMIST",
+    desc: "AI Sustainability Hackathon",
+  },
+  {
+    icon: Medal,
+    title: "2nd Runner Up",
+    sub: "UNLEASH 2024 · UNLEASH & SRMIST",
+    desc: "Renewable Energy and Water Access for Rural Development",
+  },
+  {
     icon: Medal,
     title: "Silver Medal",
     sub: "SRM Research Day 2026",
