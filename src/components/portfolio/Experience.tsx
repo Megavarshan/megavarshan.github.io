@@ -1,4 +1,5 @@
 import { Section } from "./Section";
+import { GlowCard } from "./GlowCard";
 
 const items = [
   {
@@ -55,7 +56,7 @@ export function Experience() {
             <span className="absolute left-2 top-6 grid h-5 w-5 place-items-center rounded-full bg-[oklch(0.13_0.02_270)] ring-2 ring-[var(--neon)] md:left-4">
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--neon)]" />
             </span>
-            <div className="glass glow-border rounded-2xl p-6 transition hover:bg-white/5">
+            <GlowCard className="p-6">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <div>
                   <h3 className="font-display text-xl font-semibold">{it.role}</h3>
@@ -71,7 +72,7 @@ export function Experience() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </GlowCard>
           </li>
         ))}
       </ol>

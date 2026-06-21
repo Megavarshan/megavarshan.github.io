@@ -21,8 +21,8 @@ const projects = [
   {
     icon: Languages,
     tag: "NLP Research",
-    title: "Multilingual NLP Analysis — 13 Indian Languages",
-    desc: "Fine-tuned transformer models for toxicity classification and sentiment analysis across 13 Indian languages, with robustness evaluation.",
+    title: "Multilingual NLP Analysis",
+    desc: "Fine-tuned transformer models for toxicity classification and sentiment analysis across multiple languages, with robustness evaluation.",
     stack: ["PyTorch", "Transformers", "HuggingFace"],
     metric: "Robust across low-resource languages",
   },

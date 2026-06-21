@@ -1,5 +1,6 @@
 import { Section } from "./Section";
 import { ShieldCheck } from "lucide-react";
+import { GlowCard } from "./GlowCard";
 
 const certs = [
   { name: "Oracle Autonomous Database Cloud 2025 Certified Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=8CC5915D1B50E14308B53F736FB45B5D09E0198AC513825D9599D6143EBF1970" },
@@ -43,19 +44,23 @@ export function Certifications() {
             </>
           );
 
-          const className = "glass glow-border group relative flex flex-col h-full overflow-hidden rounded-2xl p-6 transition hover:bg-white/5";
+          const className = "flex flex-col h-full overflow-hidden p-6 transition hover:bg-white/5";
 
           if (c.link) {
             return (
-              <a key={c.name} href={c.link} target="_blank" rel="noreferrer" className={className}>
-                {content}
+              <a key={c.name} href={c.link} target="_blank" rel="noreferrer" className="block h-full group">
+                <GlowCard className={className}>
+                  {content}
+                </GlowCard>
               </a>
             );
           }
 
           return (
-            <div key={c.name} className={className}>
-              {content}
+            <div key={c.name} className="block h-full group">
+              <GlowCard className={className}>
+                {content}
+              </GlowCard>
             </div>
           );
         })}

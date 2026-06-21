@@ -34,9 +34,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="flex flex-col items-start text-left"
         >
-          <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-muted-foreground">
-            — Hi, I&apos;m —
-          </p>
+
 
           {/* Glass moving name */}
           <div className="glass-name relative mt-3 inline-block overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] px-6 py-4 backdrop-blur-xl sm:px-8 sm:py-5">
@@ -44,7 +42,7 @@ export function Hero() {
             <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
               <div className="name-shimmer absolute inset-0" />
             </div>
-            <h1 className="relative font-display font-bold leading-[0.95] tracking-[-0.03em] text-[clamp(2.5rem,7vw,6rem)] text-gradient">
+            <h1 className="relative font-display font-bold leading-[0.95] tracking-[-0.03em] text-[clamp(2rem,5vw,5.5rem)] whitespace-nowrap text-gradient">
               Mega Varshan
             </h1>
           </div>
@@ -146,7 +144,7 @@ export function Hero() {
 
 function Credential({ children, icon: Icon }: { children: React.ReactNode; icon: React.ElementType }) {
   return (
-    <div className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+    <div className="flex items-center gap-3 font-sans text-[13px] font-medium tracking-wide text-foreground/80">
       <Icon className="h-3.5 w-3.5 text-[var(--neon)]" />
       <span>{children}</span>
     </div>

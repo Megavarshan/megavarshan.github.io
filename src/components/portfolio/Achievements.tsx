@@ -1,5 +1,6 @@
 import { Section } from "./Section";
 import { Trophy, Medal, Code2 } from "lucide-react";
+import { GlowCard } from "./GlowCard";
 
 const items = [
   {
@@ -43,14 +44,14 @@ export function Achievements() {
     >
       <div className="grid gap-4 md:grid-cols-3">
         {items.map((a) => (
-          <div key={a.title} className="glass glow-border relative overflow-hidden rounded-2xl p-6">
+          <GlowCard key={a.title} className="relative overflow-hidden p-6">
             <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-[var(--neon)]/25 to-[var(--violet-glow)]/25 text-[var(--neon)]">
               <a.icon className="h-5 w-5" />
             </div>
             <h3 className="mt-4 font-display text-xl font-semibold">{a.title}</h3>
             <div className="mt-1 text-sm text-[var(--neon)]">{a.sub}</div>
             <p className="mt-3 text-sm text-muted-foreground">{a.desc}</p>
-          </div>
+          </GlowCard>
         ))}
       </div>
     </Section>

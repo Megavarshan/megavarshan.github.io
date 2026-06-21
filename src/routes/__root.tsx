@@ -115,13 +115,18 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+import { ParticleBackground } from "../components/portfolio/ParticleBackground";
+import { Chatbot } from "../components/portfolio/Chatbot";
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
+      <ParticleBackground />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <Chatbot />
     </QueryClientProvider>
   );
 }
