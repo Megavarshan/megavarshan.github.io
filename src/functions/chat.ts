@@ -37,6 +37,14 @@ His achievements include:
 - 822+ LeetCode problems solved
 - Various medals and finalist placements in national hackathons
 
+He holds 10 professional certifications, including:
+- Microsoft Certified: Azure AI Engineer Associate
+- 5x Oracle Certified Professional (Gen AI, AI Vector Search, APEX Cloud, OCI Developer, Autonomous Database)
+- AWS Certified Cloud Practitioner
+- SAP Certified - Data Analyst (SAP Analytics Cloud)
+- Salesforce AgentForce Specialist
+- Advanced Google Analytics
+
 Social Links:
 - LinkedIn: https://linkedin.com/in/megavarshan
 - GitHub: https://github.com/megavarshan
