@@ -5,8 +5,8 @@ const resume = "/resume.pdf";
 const stats = [
   { label: "AI Projects", value: "12+" },
   { label: "Internships", value: "6" },
-  { label: "Certifications", value: "8" },
-  { label: "LeetCode Solved", value: "822+" },
+  { label: "Industry Certifications", value: "10" },
+  { label: "LeetCode Solved", value: "850+" },
 ];
 
 export function Hero() {
@@ -22,7 +22,7 @@ export function Hero() {
           <span className="absolute inset-0 animate-ping rounded-full bg-[var(--neon)] opacity-75" />
           <span className="h-2 w-2 rounded-full bg-[var(--neon)]" />
         </span>
-        Available for AI / ML Engineering roles · 2026
+        Available for SDE, AI/ML, Cloud and Data Engineering roles - 2026 & 2027
       </motion.div>
 
       {/* Split layout: Left text | Right portrait */}
