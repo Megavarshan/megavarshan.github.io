@@ -2,7 +2,16 @@ import { Section } from "./Section";
 import { ShieldCheck } from "lucide-react";
 import { GlowCard } from "./GlowCard";
 
-const certs = [
+type Cert = {
+  name: string;
+  issuer: string;
+  logo?: string;
+  link?: string;
+  credentialId?: string;
+};
+
+const certs: Cert[] = [
+  { name: "Microsoft Certified: Azure AI Engineer Associate", issuer: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg", link: "https://learn.microsoft.com/en-in/users/megavarshan/credentials/400d1706402f4a41?ref=https%3A%2F%2Fwww.linkedin.com%2F" },
   { name: "Oracle Autonomous Database Cloud 2025 Certified Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=8CC5915D1B50E14308B53F736FB45B5D09E0198AC513825D9599D6143EBF1970" },
   { name: "Oracle APEX Cloud Developer Certified Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=9EEBB2EB670D8094A6D6855C7F52D883530A0A916942BA9370BCF7FBAABCCFDE" },
   { name: "OCI 2025 Certified Developer Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=874772C2DEFDA06406A4951142FB8A99F3B5D5561753F2D2DD00F992756D591D" },
