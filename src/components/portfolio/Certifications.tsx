@@ -30,8 +30,19 @@ export function Certifications() {
       eyebrow="Certifications"
       title={<>Verified across <span className="text-gradient">AI, data, and cloud</span>.</>}
     >
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {certs.map((c) => {
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(180px,auto)]">
+        {certs.map((c, i) => {
+          // Bento layout logic for 10 items in a 3-column grid
+          // Row 1: span-2, span-1
+          // Row 2: span-1, span-1, span-1
+          // Row 3: span-1, span-2 (reversed)
+          // Row 4: span-1, span-1, span-1
+          let spanClass = "col-span-1";
+          if (i === 0) spanClass = "md:col-span-2 lg:col-span-2";
+          if (i === 6) spanClass = "md:col-span-2 lg:col-span-2";
+          
+          // Add a special glow or gradient for the prominent cards
+          const isProminent = i === 0 || i === 6;
           const content = (
             <>
               <div className="flex items-start justify-between">
@@ -44,8 +55,8 @@ export function Certifications() {
                 </div>
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--neon)] shrink-0">Verified</span>
               </div>
-              <div className="mt-4 flex flex-col flex-1">
-                <h3 className="font-display text-base font-semibold leading-tight">{c.name}</h3>
+              <div className="mt-4 flex flex-col flex-1 justify-center">
+                <h3 className={`font-display font-semibold leading-tight ${isProminent ? 'text-lg md:text-xl' : 'text-base'}`}>{c.name}</h3>
                 <div className="mt-1 text-xs text-muted-foreground">{c.issuer}</div>
                 {c.credentialId && <div className="mt-1 text-xs text-muted-foreground">Credential ID: {c.credentialId}</div>}
               </div>
@@ -53,11 +64,13 @@ export function Certifications() {
             </>
           );
 
-          const className = "flex flex-col h-full overflow-hidden p-6 transition hover:bg-white/5";
+          const baseCardClass = "flex flex-col h-full overflow-hidden p-6 transition-all duration-300 hover:bg-white/5 hover:-translate-y-1";
+          const prominentClass = isProminent ? "bg-gradient-to-br from-white/[0.03] to-white/[0.01]" : "";
+          const className = `${baseCardClass} ${prominentClass}`;
 
           if (c.link) {
             return (
-              <a key={c.name} href={c.link} target="_blank" rel="noreferrer" className="block h-full group">
+              <a key={c.name} href={c.link} target="_blank" rel="noreferrer" className={`block h-full group ${spanClass}`}>
                 <GlowCard className={className}>
                   {content}
                 </GlowCard>
@@ -66,7 +79,7 @@ export function Certifications() {
           }
 
           return (
-            <div key={c.name} className="block h-full group">
+            <div key={c.name} className={`block h-full group ${spanClass}`}>
               <GlowCard className={className}>
                 {content}
               </GlowCard>
