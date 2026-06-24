@@ -142,7 +142,7 @@ export function Hero() {
   );
 }
 
-function Credential({ children, icon: Icon }: { children: React.ReactNode; icon: React.ElementType }) {
+function Credential({ children, icon: Icon }: { children: React.ReactNode; icon: any }) {
   return (
     <div className="flex items-center gap-3 font-sans text-[13px] font-medium tracking-wide text-foreground/80">
       <Icon className="h-3.5 w-3.5 text-[var(--neon)]" />
