@@ -21,13 +21,14 @@ const certs: Cert[] = [
   { name: "SAP Certified - Data Analyst - SAP Analytics Cloud", issuer: "SAP", logo: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg", link: "https://www.credly.com/badges/aee95b54-a4a5-45b3-a0d8-f9d909341ed3" },
   { name: "Salesforce AgentForce Specialist", issuer: "Salesforce", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg", credentialId: "7282784" },
   { name: "Advanced Google Analytics", issuer: "Google Analytics Academy" },
+  { name: "Agentic AI Certified Foundations Associate", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=0D85B8FCAADFD6D8431E2DEF4119C5284E5374CE1C3FED5B30351BA4B6338AEF" },
 ];
 
 export function Certifications() {
   return (
     <Section
       id="certifications"
-      eyebrow="Certifications"
+      eyebrow="11 Industry Certifications"
       title={<>Verified across <span className="text-gradient">AI, data, and cloud</span>.</>}
     >
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(180px,auto)]">
