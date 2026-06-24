@@ -5,7 +5,7 @@ const resume = "/resume.pdf";
 const stats = [
   { label: "AI Projects", value: "12+" },
   { label: "Internships", value: "6" },
-  { label: "Industry Certifications", value: "10" },
+  { label: "Industry Certifications", value: "11" },
   { label: "LeetCode Solved", value: "850+" },
 ];
 

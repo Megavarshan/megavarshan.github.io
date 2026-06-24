@@ -29,7 +29,7 @@ export function Certifications() {
     <Section
       id="certifications"
       eyebrow="Certifications"
-      title={<>11 Industry Certifications across <span className="text-gradient">AI, data, and cloud</span>.</>}
+      title={<>Verified across <span className="text-gradient">AI, data, and cloud</span>.</>}
     >
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(180px,auto)]">
         {certs.map((c, i) => {
