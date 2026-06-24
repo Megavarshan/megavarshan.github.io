@@ -22,10 +22,10 @@ const certs: Cert[] = [
   { name: "OCI 2025 Certified Generative AI Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=C4E5A98DC05CF4DD0DB2EBDF2C196E443A54A37529338E3C07387838CF7BD991", issueDate: "2024", expiryDate: "No Expiration" },
   { name: "Agentic AI Certified Foundations Associate", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=0D85B8FCAADFD6D8431E2DEF4119C5284E5374CE1C3FED5B30351BA4B6338AEF", issueDate: "2024", expiryDate: "No Expiration" },
   { name: "Microsoft Certified: Azure AI Engineer Associate", issuer: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg", link: "https://learn.microsoft.com/en-in/users/megavarshan/credentials/400d1706402f4a41?ref=https%3A%2F%2Fwww.linkedin.com%2F", issueDate: "2024", expiryDate: "No Expiration" },
+  { name: "Advanced Google Analytics", issuer: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg", issueDate: "2024", expiryDate: "No Expiration" },
   { name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg", link: "https://www.credly.com/badges/f0e3e651-9a3c-4355-bff9-df63831f139d/public_url", issueDate: "2024", expiryDate: "No Expiration" },
   { name: "SAP Certified - Data Analyst - SAP Analytics Cloud", issuer: "SAP", logo: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg", link: "https://www.credly.com/badges/aee95b54-a4a5-45b3-a0d8-f9d909341ed3", issueDate: "2024", expiryDate: "No Expiration" },
   { name: "Salesforce AgentForce Specialist", issuer: "Salesforce", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg", credentialId: "7282784", issueDate: "2024", expiryDate: "No Expiration" },
-  { name: "Advanced Google Analytics", issuer: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg", issueDate: "2024", expiryDate: "No Expiration" },
 ];
 
 export function Certifications() {
@@ -48,9 +48,12 @@ export function Certifications() {
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {Object.entries(groupedCerts).map(([issuer, data], groupIndex) => {
-          // Make Oracle (which has 6 certs) span more columns for a nicer layout
+          // Make Oracle (which has 6 certs) span 2 columns and 2 rows for a nicer layout
           const isLargeGroup = data.certs.length > 3;
-          const spanClass = isLargeGroup ? "md:col-span-2 lg:col-span-2" : "col-span-1";
+          let spanClass = "col-span-1";
+          if (isLargeGroup) {
+            spanClass = "md:col-span-2 lg:col-span-2 lg:row-span-2";
+          }
 
           return (
             <GlowCard 
