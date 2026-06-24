@@ -29,7 +29,7 @@ const items = [
   },
   {
     icon: Code2,
-    title: "822+ LeetCode Solved",
+    title: "850+ LeetCode Solved",
     sub: "Contest Rating 1553 · Top 31.5%",
     desc: "Consistent competitive programming performance.",
   },
