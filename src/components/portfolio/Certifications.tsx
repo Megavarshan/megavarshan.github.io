@@ -28,22 +28,23 @@ export function Certifications() {
   return (
     <Section
       id="certifications"
-      eyebrow="11 Industry Certifications"
-      title={<>Verified across <span className="text-gradient">AI, data, and cloud</span>.</>}
+      eyebrow="Certifications"
+      title={<>11 Industry Certifications across <span className="text-gradient">AI, data, and cloud</span>.</>}
     >
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(180px,auto)]">
         {certs.map((c, i) => {
-          // Bento layout logic for 10 items in a 3-column grid
+          // Bento layout logic for 11 items in a 3-column grid
           // Row 1: span-2, span-1
           // Row 2: span-1, span-1, span-1
           // Row 3: span-1, span-2 (reversed)
-          // Row 4: span-1, span-1, span-1
+          // Row 4: span-2, span-1
+          // Row 5: span-1, span-2 (reversed)
           let spanClass = "col-span-1";
-          if (i === 0) spanClass = "md:col-span-2 lg:col-span-2";
-          if (i === 6) spanClass = "md:col-span-2 lg:col-span-2";
+          if (i === 0 || i === 7) spanClass = "md:col-span-2 lg:col-span-2";
+          if (i === 6 || i === 10) spanClass = "md:col-span-2 lg:col-span-2";
           
           // Add a special glow or gradient for the prominent cards
-          const isProminent = i === 0 || i === 6;
+          const isProminent = i === 0 || i === 6 || i === 7 || i === 10;
           const content = (
             <>
               <div className="flex items-start justify-between">
