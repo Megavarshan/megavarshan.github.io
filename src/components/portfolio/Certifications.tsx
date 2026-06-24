@@ -15,17 +15,17 @@ type Cert = {
 };
 
 const certs: Cert[] = [
-  { name: "Oracle Autonomous Database Cloud 2025 Certified Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=8CC5915D1B50E14308B53F736FB45B5D09E0198AC513825D9599D6143EBF1970", issueDate: "2024", expiryDate: "No Expiration" },
-  { name: "Oracle APEX Cloud Developer Certified Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=9EEBB2EB670D8094A6D6855C7F52D883530A0A916942BA9370BCF7FBAABCCFDE", issueDate: "2024", expiryDate: "No Expiration" },
-  { name: "OCI 2025 Certified Developer Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=874772C2DEFDA06406A4951142FB8A99F3B5D5561753F2D2DD00F992756D591D", issueDate: "2024", expiryDate: "No Expiration" },
-  { name: "Oracle AI Vector Search Certified Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=B19DE67FD8255D837EA204F77BB72F588BB0991D90D3B32435402DB0B80A6228", issueDate: "2024", expiryDate: "No Expiration" },
-  { name: "OCI 2025 Certified Generative AI Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=C4E5A98DC05CF4DD0DB2EBDF2C196E443A54A37529338E3C07387838CF7BD991", issueDate: "2024", expiryDate: "No Expiration" },
-  { name: "Agentic AI Certified Foundations Associate", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=0D85B8FCAADFD6D8431E2DEF4119C5284E5374CE1C3FED5B30351BA4B6338AEF", issueDate: "2024", expiryDate: "No Expiration" },
-  { name: "Microsoft Certified: Azure AI Engineer Associate", issuer: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg", link: "https://learn.microsoft.com/en-in/users/megavarshan/credentials/400d1706402f4a41?ref=https%3A%2F%2Fwww.linkedin.com%2F", issueDate: "2024", expiryDate: "No Expiration" },
-  { name: "Advanced Google Analytics", issuer: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg", issueDate: "2024", expiryDate: "No Expiration" },
-  { name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg", link: "https://www.credly.com/badges/f0e3e651-9a3c-4355-bff9-df63831f139d/public_url", issueDate: "2024", expiryDate: "No Expiration" },
-  { name: "SAP Certified - Data Analyst - SAP Analytics Cloud", issuer: "SAP", logo: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg", link: "https://www.credly.com/badges/aee95b54-a4a5-45b3-a0d8-f9d909341ed3", issueDate: "2024", expiryDate: "No Expiration" },
-  { name: "Salesforce AgentForce Specialist", issuer: "Salesforce", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg", credentialId: "7282784", issueDate: "2024", expiryDate: "No Expiration" },
+  { name: "Oracle Autonomous Database Cloud 2025 Certified Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=8CC5915D1B50E14308B53F736FB45B5D09E0198AC513825D9599D6143EBF1970", issueDate: "29 August 2025", expiryDate: "August 29, 2027" },
+  { name: "Oracle APEX Cloud Developer Certified Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=9EEBB2EB670D8094A6D6855C7F52D883530A0A916942BA9370BCF7FBAABCCFDE", issueDate: "12 September 2025", expiryDate: "No Expiration" },
+  { name: "OCI 2025 Certified Developer Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=874772C2DEFDA06406A4951142FB8A99F3B5D5561753F2D2DD00F992756D591D", issueDate: "10 September 2025", expiryDate: "September 10, 2027" },
+  { name: "Oracle AI Vector Search Certified Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=B19DE67FD8255D837EA204F77BB72F588BB0991D90D3B32435402DB0B80A6228", issueDate: "26 September 2025", expiryDate: "September 26, 2027" },
+  { name: "OCI 2025 Certified Generative AI Professional", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=C4E5A98DC05CF4DD0DB2EBDF2C196E443A54A37529338E3C07387838CF7BD991", issueDate: "29 August 2025", expiryDate: "August 29, 2027" },
+  { name: "Agentic AI Certified Foundations Associate", issuer: "Oracle", logo: "https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=0D85B8FCAADFD6D8431E2DEF4119C5284E5374CE1C3FED5B30351BA4B6338AEF", issueDate: "23 June 2026", expiryDate: "June 23, 2028" },
+  { name: "Microsoft Certified: Azure AI Engineer Associate", issuer: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg", link: "https://learn.microsoft.com/en-in/users/megavarshan/credentials/400d1706402f4a41?ref=https%3A%2F%2Fwww.linkedin.com%2F", issueDate: "23 June 2026", expiryDate: "23 June 2027" },
+  { name: "Advanced Google Analytics", issuer: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg", expiryDate: "February 7, 2027" },
+  { name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg", link: "https://www.credly.com/badges/f0e3e651-9a3c-4355-bff9-df63831f139d/public_url", issueDate: "August 24, 2025", expiryDate: "August 24, 2028" },
+  { name: "SAP Certified - Data Analyst - SAP Analytics Cloud", issuer: "SAP", logo: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg", link: "https://www.credly.com/badges/aee95b54-a4a5-45b3-a0d8-f9d909341ed3", issueDate: "April 20, 2026", expiryDate: "April 21, 2027" },
+  { name: "Salesforce Certified AgentForce Specialist", issuer: "Salesforce", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg", credentialId: "7282784", link: "https://trailhead.salesforce.com/en/credentials/verification/", issueDate: "December 26, 2025", expiryDate: "No Expiration" },
 ];
 
 export function Certifications() {
@@ -115,7 +115,7 @@ export function Certifications() {
               {/* Background ambient glow inside modal */}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,0.15),transparent_50%)] pointer-events-none" />
               
-              <Dialog.Close className="absolute right-6 top-6 rounded-full p-2 text-white/50 opacity-70 transition-opacity hover:bg-white/10 hover:opacity-100 hover:text-white focus:outline-none focus:ring-2 focus:ring-[var(--neon)]">
+              <Dialog.Close className="absolute right-6 top-6 z-50 rounded-full p-2 text-white/50 opacity-70 transition-opacity hover:bg-white/10 hover:opacity-100 hover:text-white focus:outline-none focus:ring-2 focus:ring-[var(--neon)]">
                 <X className="h-5 w-5" />
                 <span className="sr-only">Close</span>
               </Dialog.Close>
@@ -139,13 +139,15 @@ export function Certifications() {
                   </div>
 
                   <div className="w-full grid grid-cols-2 gap-4 mb-8 text-left">
-                    <div className="bg-white/5 rounded-xl p-4 border border-white/5">
-                      <div className="flex items-center gap-2 text-muted-foreground mb-1">
-                        <Calendar className="h-3.5 w-3.5" />
-                        <span className="text-xs uppercase tracking-wider font-mono">Certified</span>
+                    {selectedCert.issueDate && (
+                      <div className="bg-white/5 rounded-xl p-4 border border-white/5">
+                        <div className="flex items-center gap-2 text-muted-foreground mb-1">
+                          <Calendar className="h-3.5 w-3.5" />
+                          <span className="text-xs uppercase tracking-wider font-mono">Certified</span>
+                        </div>
+                        <div className="text-sm font-medium">{selectedCert.issueDate}</div>
                       </div>
-                      <div className="text-sm font-medium">{selectedCert.issueDate}</div>
-                    </div>
+                    )}
                     
                     <div className="bg-white/5 rounded-xl p-4 border border-white/5">
                       <div className="flex items-center gap-2 text-muted-foreground mb-1">
@@ -176,11 +178,11 @@ export function Certifications() {
                       Verify Credential
                       <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </a>
-                  ) : (
+                  ) : selectedCert.issuer !== "Google" ? (
                     <div className="w-full flex items-center justify-center gap-2 rounded-xl bg-white/10 text-white/50 px-6 py-4 text-sm font-semibold cursor-not-allowed">
                       Verification Link Unavailable
                     </div>
-                  )}
+                  ) : null}
                 </div>
               )}
             </div>
