@@ -56,7 +56,7 @@ export function Nav() {
 
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
-          <div className="absolute top-[120%] left-0 right-0 glass-strong rounded-2xl p-4 flex flex-col gap-2 md:hidden shadow-[var(--shadow-elevated)] border border-white/10 animate-in fade-in slide-in-from-top-2">
+          <div className="absolute top-[120%] left-0 right-0 bg-black/95 backdrop-blur-3xl rounded-2xl p-4 flex flex-col gap-2 md:hidden shadow-2xl border border-white/10 animate-in fade-in slide-in-from-top-2">
             {links.map((l) => (
               <a 
                 key={l.href}
