@@ -8,6 +8,7 @@ import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
 import { Certifications } from "@/components/portfolio/Certifications";
 import { Achievements } from "@/components/portfolio/Achievements";
+import { LeetCodeSection } from "@/components/portfolio/LeetCodeSection";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 
@@ -35,6 +36,7 @@ function Index() {
       <Skills />
       <Certifications />
       <Achievements />
+      <LeetCodeSection />
       <Contact />
       <Footer />
     </main>

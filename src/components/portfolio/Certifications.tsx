@@ -44,7 +44,7 @@ export function Certifications() {
     <Section
       id="certifications"
       eyebrow="Certifications"
-      title={<>11 Industry Certifications across <span className="text-gradient">AI, data, and cloud</span>.</>}
+      title={<>Verified Across <span className="text-gradient">AI, Data & Cloud</span>.</>}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {Object.entries(groupedCerts).map(([issuer, data], groupIndex) => {

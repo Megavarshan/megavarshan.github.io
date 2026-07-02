@@ -223,6 +223,18 @@
   50% { opacity: 0.8; transform: scale(1.05); }
 }
 
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 12px)); }
+}
+
+@utility animate-marquee {
+  animation: marquee 40s linear infinite;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
 @utility animate-float {
   animation: float-slow 8s ease-in-out infinite;
 }
