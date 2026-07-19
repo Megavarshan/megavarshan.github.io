@@ -11,10 +11,9 @@ const projects = [
     githubLink: "https://github.com/Megavarshan/disaster-ai",
     desc: (
       <ul className="list-outside list-disc pl-4 space-y-2 mt-2">
-        <li><strong>AURA AI Risk Assessment:</strong> Integrated AI assistant continuously analyzes data streams, automatically assesses risk severity, verifies report admissibility, and flags anomalies.</li>
-        <li><strong>Multi-Modal Data Pipeline:</strong> Ingests live citizen reports, localized weather nodes, and custom datasets for real-time operational map updates.</li>
-        <li><strong>Dynamic Resource Orchestration:</strong> Orchestrates specialized teams (NDRF/SDRF) directly to verified incident hotspots based on real-time help center capacities.</li>
-        <li><strong>Automated PDF Reporting:</strong> Custom-engineered engine instantly generates offline, pixel-perfect Daily Situation Reports and Risk Assessments.</li>
+        <li>AI-powered disaster intelligence platform that unifies real-time incident reports, weather feeds, and operational data into a centralized command center for emergency response.</li>
+        <li>Powered by AURA AI, it leverages RAG, advanced decision-admissibility algorithms, anomaly detection, and automated data analysis to generate contextual insights, verify incidents, and support faster resource deployment.</li>
+        <li>The platform integrates multiple REST APIs, geospatial intelligence, and one-click official report generation, enabling agencies like NDRF and SDRF to make accurate, data-driven decisions during critical situations.</li>
       </ul>
     ),
     stack: ["Python", "Machine Learning", "Data Pipelines", "AI Agents", "LLMs"],
