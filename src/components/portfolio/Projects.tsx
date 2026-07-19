@@ -1,14 +1,24 @@
 import { Section } from "./Section";
-import { Satellite, TrafficCone, Languages, ArrowUpRight } from "lucide-react";
+import { Satellite, TrafficCone, Languages, ArrowUpRight, Github, ExternalLink, ShieldAlert } from "lucide-react";
+import React from "react";
 
 const projects = [
   {
-    icon: Satellite,
-    tag: "ARIES & DRDO",
-    title: "AI-Based Spatial Information System for Disaster Management",
-    desc: "Geospatial intelligence platform fusing satellite imagery, multimodal data, and ML models for disaster prediction and risk assessment.",
-    stack: ["Python", "GeoPandas", "GIS", "Pandas", "ML"],
-    metric: "Multi-source geospatial analytics",
+    icon: ShieldAlert,
+    tag: "Government & Crisis Response",
+    title: "Decision-Admissibility Disaster Intelligence Platform (DADIP)",
+    demoLink: "https://dadip-disaster-ai.vercel.app/",
+    githubLink: "https://github.com/Megavarshan/disaster-ai",
+    desc: (
+      <ul className="list-outside list-disc pl-4 space-y-2 mt-2">
+        <li><strong>AURA AI Risk Assessment:</strong> Integrated AI assistant continuously analyzes data streams, automatically assesses risk severity, verifies report admissibility, and flags anomalies.</li>
+        <li><strong>Multi-Modal Data Pipeline:</strong> Ingests live citizen reports, localized weather nodes, and custom datasets for real-time operational map updates.</li>
+        <li><strong>Dynamic Resource Orchestration:</strong> Orchestrates specialized teams (NDRF/SDRF) directly to verified incident hotspots based on real-time help center capacities.</li>
+        <li><strong>Automated PDF Reporting:</strong> Custom-engineered engine instantly generates offline, pixel-perfect Daily Situation Reports and Risk Assessments.</li>
+      </ul>
+    ),
+    stack: ["Python", "Machine Learning", "Data Pipelines", "AI Agents", "LLMs"],
+    metric: "Proactive, data-admissible intelligence",
   },
   {
     icon: TrafficCone,
@@ -34,7 +44,7 @@ export function Projects() {
       id="projects"
       eyebrow="Featured Projects"
       title={<>Selected <span className="text-gradient">AI systems</span> shipped end-to-end.</>}
-      intro="Research-backed projects spanning geospatial AI, intelligent transportation, and multilingual NLP."
+      intro="Research-backed projects spanning disaster response AI, intelligent transportation, and multilingual NLP."
     >
       <div className="grid gap-5 md:grid-cols-2">
         {projects.map((p, i) => (
@@ -49,11 +59,35 @@ export function Projects() {
                 </div>
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">{p.tag}</span>
               </div>
-              <ArrowUpRight className="h-5 w-5 text-muted-foreground transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--neon)]" />
+              {p.demoLink ? (
+                <a href={p.demoLink} target="_blank" rel="noopener noreferrer">
+                  <ArrowUpRight className="h-5 w-5 text-muted-foreground transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--neon)]" />
+                </a>
+              ) : (
+                <ArrowUpRight className="h-5 w-5 text-muted-foreground transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--neon)]" />
+              )}
             </div>
 
-            <h3 className="mt-5 font-display text-2xl font-semibold leading-tight md:text-[1.65rem]">{p.title}</h3>
-            <p className="mt-3 text-sm text-muted-foreground md:text-base">{p.desc}</p>
+            <h3 className="mt-5 font-display text-2xl font-semibold leading-tight md:text-[1.65rem] flex flex-wrap items-center gap-3">
+              {p.title}
+              {p.githubLink && (
+                <a href={p.githubLink} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition">
+                  <Github className="h-6 w-6" />
+                </a>
+              )}
+              {p.demoLink && (
+                <a href={p.demoLink} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-[var(--neon)] transition flex items-center gap-1.5 text-[13px] font-sans font-medium border border-white/10 rounded-full px-3 py-1 bg-white/5">
+                  <ExternalLink className="h-3.5 w-3.5" />
+                  Demo Link
+                </a>
+              )}
+            </h3>
+            
+            {typeof p.desc === "string" ? (
+              <p className="mt-3 text-sm text-muted-foreground md:text-base">{p.desc}</p>
+            ) : (
+              <div className="mt-3 text-sm text-muted-foreground md:text-base">{p.desc}</div>
+            )}
 
             <div className="mt-5 flex items-center gap-2 text-xs">
               <span className="grid h-6 w-6 place-items-center rounded-full bg-[var(--neon)]/15 text-[var(--neon)]">↗</span>
