@@ -29,6 +29,7 @@ He interned at:
 1. Ganpat University (AI 2D/3D avatars)
 2. InfiniTraq AI (Computer Vision CCTV)
 3. NIT Trichy (Dermoscopic Classification)
+4. ATRIBS Software Systems (Automation workflows)
 
 He has built projects like:
 - AI-Based Spatial Information System for Disaster Management (ARIES & DRDO)
@@ -38,7 +39,7 @@ He has built projects like:
 His achievements include:
 - National Runner Up at SEISMO HACK 1.0 (National Disaster Management hackathon by ISET and SRM IST, Aug 2025)
 - Winner of Hybrid Hacks 2024
-- 850+ LeetCode problems solved (Top 31.65%)
+- 871 LeetCode problems solved (Top 31.87%), Global Rank: 276,140, Contest Rating: 1553, 38 Badges
 - Various medals and finalist placements in national hackathons
 
 He holds 11 professional certifications, including:
@@ -52,6 +53,8 @@ He holds 11 professional certifications, including:
 Social Links:
 - LinkedIn: https://linkedin.com/in/megavarshan
 - GitHub: https://github.com/megavarshan
+- LeetCode: https://leetcode.com/megavarshan
+- Medium: https://medium.com/@megavarshan
 - Email: megavarshan1616@gmail.com
 - Resume: Can be downloaded directly from the Hero section or Contact section of his website.
 

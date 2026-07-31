@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { Section } from "./Section";
-import { Github, Linkedin, Mail, Download, Code2 } from "lucide-react";
+import { Github, Linkedin, Mail, Download, Code2, BookOpen } from "lucide-react";
 const resume = "/resume.pdf";
 
 const links = [
   { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/megavarshan", value: "linkedin.com/in/megavarshan" },
   { icon: Github, label: "GitHub", href: "https://github.com/megavarshan", value: "github.com/megavarshan" },
   { icon: Code2, label: "LeetCode", href: "https://leetcode.com/megavarshan", value: "leetcode.com/megavarshan" },
+  { icon: BookOpen, label: "Medium", href: "https://medium.com/@megavarshan", value: "medium.com/@megavarshan" },
   { icon: Mail, label: "Email", href: "mailto:megavarshan1616@gmail.com", value: "megavarshan1616@gmail.com" },
 ];
 

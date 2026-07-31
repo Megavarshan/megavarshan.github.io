@@ -3,26 +3,32 @@ import { Section } from "./Section";
 const groups = [
   {
     title: "Programming",
+    icon: "💻",
     items: ["Python", "Java", "C++", "SQL", "Linux"],
   },
   {
     title: "Machine Learning & AI",
+    icon: "🧠",
     items: ["Machine Learning", "Deep Learning", "Neural Networks", "Transformers", "GANs", "Computer Vision", "NLP", "LLMs", "Model Explainability"],
   },
   {
     title: "Generative AI & LLM",
+    icon: "✨",
     items: ["Prompt Engineering", "LangChain", "RAG", "AI Agents", "Multi-Agent Systems", "LLM Fine-Tuning", "FAISS", "ChromaDB"],
   },
   {
     title: "Data Engineering",
+    icon: "🗄️",
     items: ["ETL Pipelines", "Data Warehousing", "Data Modeling", "Feature Engineering", "EDA", "Apache Spark", "PySpark", "Hadoop", "Hive"],
   },
   {
     title: "Frameworks & Tools",
+    icon: "🛠️",
     items: ["TensorFlow", "PyTorch", "Scikit-Learn", "FastAPI", "Docker", "GitHub"],
   },
   {
     title: "Cloud",
+    icon: "☁️",
     items: ["AWS", "Azure", "Firebase", "BigQuery", "SageMaker", "Bedrock"],
   },
 ];
@@ -40,7 +46,7 @@ export function Skills() {
           <div key={g.title} className="glass glow-border rounded-2xl p-6">
             <div className="flex items-center justify-between">
               <h3 className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">{g.title}</h3>
-              <span className="font-mono text-[10px] text-[var(--neon)]">{g.items.length.toString().padStart(2, "0")}</span>
+              <span className="text-xl">{g.icon}</span>
             </div>
             <div className="mt-5 flex flex-wrap gap-2">
               {g.items.map((s) => (

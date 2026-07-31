@@ -5,6 +5,7 @@ const items = [
   {
     role: "AI Research Intern",
     org: "Ganpat University",
+    logo: "/ganpat.png",
     period: "Jan 2026 - Apr 2026",
     color: "var(--neon)", // Cyan
     glow: "var(--neon-soft)",
@@ -16,6 +17,7 @@ const items = [
   {
     role: "Computer Vision AI Developer Intern",
     org: "InfiniTraq AI · Griffin AI",
+    logo: "/infinitraq.png",
     period: "Dec 2025 - Jan 2026",
     color: "oklch(0.7 0.22 295)", // Violet
     glow: "oklch(0.7 0.22 295 / 0.35)",
@@ -28,6 +30,7 @@ const items = [
   {
     role: "AI Research Intern",
     org: "National Institute of Technology (NIT), Trichy",
+    logo: "/nit-trichy.png",
     period: "June 2025 - Dec 2025",
     color: "oklch(0.85 0.2 90)", // Amber
     glow: "oklch(0.85 0.2 90 / 0.35)",
@@ -40,6 +43,7 @@ const items = [
   {
     role: "Developer Intern",
     org: "ATRIBS Software Systems",
+    logo: "/atribs.png",
     period: "June 2025 - July 2025",
     color: "oklch(0.75 0.2 150)", // Neon Green
     glow: "oklch(0.75 0.2 150 / 0.35)",
@@ -108,8 +112,11 @@ export function Experience() {
                       <h3 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-white transition-colors group-hover:text-[var(--item-color)] drop-shadow-md">
                         {it.role}
                       </h3>
-                      <div className={`mt-2 font-mono text-xs sm:text-sm uppercase tracking-widest text-[var(--item-color)] flex items-center gap-2 ${isLeft ? 'md:justify-end' : ''}`}>
+                      <div className={`mt-2 font-mono text-xs sm:text-sm uppercase tracking-widest text-[var(--item-color)] flex items-center gap-3 ${isLeft ? 'md:justify-end' : ''}`}>
                         {!isLeft && <span className="h-px w-6 bg-[var(--item-color)] opacity-70"></span>}
+                        <div className="flex items-center h-14 w-auto max-w-[120px] shrink-0">
+                          <img src={it.logo} alt={it.org} className="h-full w-full object-contain" />
+                        </div>
                         {it.org}
                         {isLeft && <span className="hidden md:block h-px w-6 bg-[var(--item-color)] opacity-70"></span>}
                       </div>
