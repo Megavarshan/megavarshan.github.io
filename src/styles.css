@@ -256,3 +256,38 @@
   color: transparent;
   animation: shimmer 3s linear infinite;
 }
+
+/* Skills section HUD animations */
+@keyframes data-flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
+
+@keyframes blink-status {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes typing-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes node-pulse {
+  0% { box-shadow: 0 0 0 0 oklch(0.82 0.19 195 / 0.7); }
+  70% { box-shadow: 0 0 0 6px oklch(0.82 0.19 195 / 0); }
+  100% { box-shadow: 0 0 0 0 oklch(0.82 0.19 195 / 0); }
+}
+
+@keyframes tech-glitch {
+  0%, 100% { transform: translate(0); }
+  10% { transform: translate(-1px, 1px); }
+  20% { transform: translate(1px, -1px); }
+  30% { transform: translate(-1px, -1px); }
+  40% { transform: translate(1px, 1px); }
+}

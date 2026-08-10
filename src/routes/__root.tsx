@@ -117,12 +117,14 @@ function RootShell({ children }: { children: ReactNode }) {
 
 import { ParticleBackground } from "../components/portfolio/ParticleBackground";
 import { Chatbot } from "../components/portfolio/Chatbot";
+import { CustomCursor } from "../components/CustomCursor";
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
+      <CustomCursor />
       <ParticleBackground />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />

@@ -8,7 +8,6 @@ const links = [
   { href: "#certifications", label: "Certifications" },
   { href: "#achievements", label: "Achievements" },
   { href: "#leetcode", label: "LeetCode" },
-  { href: "#contact", label: "Contact" },
 ];
 
 export function Nav() {

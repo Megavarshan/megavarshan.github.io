@@ -107,7 +107,7 @@ export function LeetCodeSection() {
                   <Target className="w-4 h-4 md:w-5 md:h-5 text-white/50 group-hover:text-white transition-colors" />
                 </div>
                 <div className="relative z-10">
-                  <div className="text-2xl md:text-4xl font-bold font-mono text-white tracking-tight">50,300</div>
+                  <div className="text-2xl md:text-4xl font-bold font-mono text-white tracking-tight">49,305</div>
                   <div className="text-[9px] md:text-xs text-muted-foreground mt-1 md:mt-2 font-mono">
                     Profile Rank
                   </div>
@@ -122,7 +122,7 @@ export function LeetCodeSection() {
                   <TrendingUp className="w-4 h-4 md:w-5 md:h-5 text-[#0ea5e9] opacity-50 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div>
-                  <div className="text-xl md:text-3xl font-bold font-mono text-[#0ea5e9] tracking-tight leading-none">Top 31.87%</div>
+                  <div className="text-xl md:text-3xl font-bold font-mono text-[#0ea5e9] tracking-tight leading-none">Top 31.9%</div>
                   <div className="text-[9px] md:text-xs text-muted-foreground mt-1 md:mt-2 font-mono">
                     Of Active Users
                   </div>
@@ -137,7 +137,7 @@ export function LeetCodeSection() {
                   <Cpu className="w-4 h-4 md:w-5 md:h-5 text-green-400 opacity-50 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div>
-                  <div className="text-2xl md:text-4xl font-bold font-mono text-green-400 tracking-tight">871</div>
+                  <div className="text-2xl md:text-4xl font-bold font-mono text-green-400 tracking-tight">880+</div>
                   <div className="text-[9px] md:text-xs text-muted-foreground mt-1 md:mt-2 font-mono">
                     Problems Conquered
                   </div>
