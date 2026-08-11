@@ -25,7 +25,7 @@ export function Skills() {
       intro="A comprehensive visual workflow map demonstrating how my skills interconnect to build full-stack intelligent systems."
     >
       {/* DESKTOP VIEW */}
-      <div className="hidden md:block relative w-full aspect-[5/3] max-h-[750px] max-w-6xl mx-auto overflow-visible mt-10">
+      <div className="hidden md:block relative w-full aspect-[5/3] max-h-[750px] max-w-6xl mx-auto overflow-visible mt-2">
         
         {/* SVG Connections */}
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full pointer-events-none z-0">
@@ -71,7 +71,7 @@ export function Skills() {
       </div>
 
       {/* MOBILE VIEW */}
-      <div className="md:hidden flex flex-col gap-10 relative py-8 px-4 mt-8">
+      <div className="md:hidden flex flex-col gap-10 relative py-8 px-4 mt-2">
         <div className="absolute left-1/2 -translate-x-1/2 top-10 bottom-10 w-0.5 bg-white/10" />
         
         {[

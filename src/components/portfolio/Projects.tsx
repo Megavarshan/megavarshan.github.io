@@ -1,40 +1,54 @@
 import { Section } from "./Section";
-import { Satellite, TrafficCone, Languages, ArrowUpRight, Github, ExternalLink, ShieldAlert } from "lucide-react";
+import { Satellite, TrafficCone, Languages, ArrowUpRight, Github, ExternalLink, ShieldAlert, Activity } from "lucide-react";
 import React from "react";
 
 const projects = [
   {
-    icon: ShieldAlert,
-    tag: "Government & Crisis Response",
+    title: "Enterprise CRM Analytics & Automation Platform",
+    subtitle: "AI-Native Customer Intelligence",
+    color: "from-emerald-600/30 to-emerald-900/10",
+    icon: Activity,
+    githubLink: "https://github.com/Megavarshan/AI-CRM",
+    bullets: [
+      "Built AI-powered customer analytics, segmentation, churn detection, and engagement.",
+      "Integrated LLMs, RAG, semantic search, and vector embeddings."
+    ]
+  },
+  {
     title: "Decision-Admissibility Disaster Intelligence Platform (DADIP)",
-    demoLink: "https://dadip-disaster-ai.vercel.app/",
+    subtitle: "Real-time Emergency Command",
+    color: "from-blue-600/30 to-blue-900/10",
+    icon: ShieldAlert,
     githubLink: "https://github.com/Megavarshan/disaster-ai",
-    desc: (
-      <ul className="list-outside list-disc pl-4 space-y-2 mt-2">
-        <li>AI-powered disaster intelligence platform that unifies real-time incident reports, weather feeds, and operational data into a centralized command center for emergency response.</li>
-        <li>Powered by AURA AI, it leverages RAG, advanced decision-admissibility algorithms, anomaly detection, and automated data analysis to generate contextual insights, verify incidents, and support faster resource deployment.</li>
-        <li>The platform integrates multiple REST APIs, geospatial intelligence, and one-click official report generation, enabling agencies like NDRF and SDRF to make accurate, data-driven decisions during critical situations.</li>
-      </ul>
-    ),
-    stack: ["Python", "Machine Learning", "Data Pipelines", "AI Agents", "LLMs"],
-    metric: "Proactive, data-admissible intelligence",
+    demoLink: "https://dadip-disaster-ai.vercel.app/",
+    bullets: [
+      "Unified real-time incidents, weather, operational, and geospatial data.",
+      "Implemented AI agents, RAG, anomaly detection, and automated reporting."
+    ]
   },
   {
+    title: "Smart Traffic Optimizer via SARSA",
+    subtitle: "Dynamic Flow via SARSA RL",
+    color: "from-purple-600/30 to-purple-900/10",
     icon: TrafficCone,
-    tag: "IIT Guwahati",
-    title: "Reducing Road Congestion in Greater Mumbai",
-    desc: "Traffic forecasting and signal optimization using ITS data — congestion prediction and intelligent route guidance for urban mobility.",
-    stack: ["Python", "Scikit-Learn", "Pandas", "NumPy", "ITS Data"],
-    metric: "70% simulated traffic flow improvement",
+    githubLink: "https://github.com/Megavarshan/Traffic-Application-SARSA",
+    demoLink: "https://sarsa-rl.vercel.app/",
+    bullets: [
+      "Built a SARSA RL agent for adaptive traffic-light control.",
+      "Deployed FastAPI + React simulation with live training and Q-value explainability."
+    ]
   },
   {
+    title: "Culturally-Aware Multilingual NLP Analysis",
+    subtitle: "Culturally-Aware NLP Research",
+    color: "from-orange-600/30 to-orange-900/10",
     icon: Languages,
-    tag: "NLP Research",
-    title: "Multilingual NLP Analysis",
-    desc: "Fine-tuned transformer models for toxicity classification and sentiment analysis across multiple languages, with robustness evaluation.",
-    stack: ["PyTorch", "Transformers", "HuggingFace"],
-    metric: "Robust across low-resource languages",
-  },
+    githubLink: "https://github.com/Megavarshan/multilingual-nlp-analysis",
+    bullets: [
+      "Evaluated NLP models across 13 Indian languages for sentiment and toxicity.",
+      "Benchmarked IndicBERT, MuRIL, XLM-RoBERTa, and mBERT for multilingual understanding."
+    ]
+  }
 ];
 
 export function Projects() {
@@ -45,63 +59,65 @@ export function Projects() {
       title={<>Selected <span className="text-gradient">AI systems</span> shipped end-to-end.</>}
       intro="Research-backed projects spanning disaster response AI, intelligent transportation, and multilingual NLP."
     >
-      <div className="grid gap-5 md:grid-cols-2">
-        {projects.map((p, i) => (
-          <article
-            key={p.title}
-            className={`glass glow-border group relative flex flex-col overflow-hidden rounded-3xl p-7 transition hover:-translate-y-1 hover:bg-white/5 ${i === 0 ? "md:col-span-2" : ""}`}
+      <div className="grid gap-4 lg:gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-8">
+        {projects.map((p) => (
+          <article 
+            key={p.title} 
+            className="relative flex flex-col bg-[#0f1115]/90 border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_-15px_rgba(6,182,212,0.3)] group"
           >
-            <div className="flex items-start justify-between">
-              <div className="flex items-center gap-3">
-                <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-[var(--neon)]/25 to-[var(--violet-glow)]/25 text-[var(--neon)]">
-                  <p.icon className="h-5 w-5" />
-                </div>
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">{p.tag}</span>
+            {/* Top Banner with Grid Pattern */}
+            <div className={`h-16 w-full relative bg-gradient-to-br ${p.color}`}>
+              {/* CSS Grid Pattern Overlay */}
+              <div 
+                className="absolute inset-0 opacity-20"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px)`,
+                  backgroundSize: '20px 20px'
+                }}
+              />
+              {/* Icon in bottom left */}
+              <div className="absolute bottom-2.5 left-5 text-white/30 group-hover:text-white/50 transition-colors">
+                <p.icon className="h-6 w-6" strokeWidth={1.5} />
               </div>
-              {p.demoLink ? (
-                <a href={p.demoLink} target="_blank" rel="noopener noreferrer">
-                  <ArrowUpRight className="h-5 w-5 text-muted-foreground transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--neon)]" />
-                </a>
-              ) : (
-                <ArrowUpRight className="h-5 w-5 text-muted-foreground transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--neon)]" />
-              )}
             </div>
 
-            <h3 className="mt-5 font-display text-2xl font-semibold leading-tight md:text-[1.65rem] flex flex-wrap items-center gap-3">
-              {p.title}
-              {p.githubLink && (
-                <a href={p.githubLink} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition">
-                  <Github className="h-6 w-6" />
-                </a>
-              )}
-              {p.demoLink && (
-                <a href={p.demoLink} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-[var(--neon)] transition flex items-center gap-1.5 text-[13px] font-sans font-medium border border-white/10 rounded-full px-3 py-1 bg-white/5">
-                  <ExternalLink className="h-3.5 w-3.5" />
-                  Demo Link
-                </a>
-              )}
-            </h3>
-            
-            {typeof p.desc === "string" ? (
-              <p className="mt-3 text-sm text-muted-foreground md:text-base">{p.desc}</p>
-            ) : (
-              <div className="mt-3 text-sm text-muted-foreground md:text-base">{p.desc}</div>
-            )}
+            {/* Content Container */}
+            <div className="px-4 lg:px-5 pt-5 pb-6 flex-1 flex flex-col">
 
-            <div className="mt-5 flex items-center gap-2 text-xs">
-              <span className="grid h-6 w-6 place-items-center rounded-full bg-[var(--neon)]/15 text-[var(--neon)]">↗</span>
-              <span className="text-foreground">{p.metric}</span>
+              {/* Title, Links & Subtitle */}
+              <div className="flex items-start justify-between gap-3 mb-1.5">
+                <h3 className="font-display text-lg md:text-xl font-bold text-[var(--neon)] leading-tight">
+                  {p.title}
+                </h3>
+                <div className="flex items-center gap-3 mt-1 shrink-0">
+                  {p.githubLink && (
+                    <a href={p.githubLink} target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">
+                      <Github className="h-5 w-5" />
+                    </a>
+                  )}
+                  {p.demoLink && (
+                    <a href={p.demoLink} target="_blank" rel="noopener noreferrer" className="text-[var(--neon)]/50 hover:text-[var(--neon)] transition-colors">
+                      <ExternalLink className="h-5 w-5" />
+                    </a>
+                  )}
+                </div>
+              </div>
+              <p className="text-[11px] md:text-xs text-muted-foreground font-mono mb-5">
+                {p.subtitle}
+              </p>
+
+              {/* Bullets */}
+              <ul className="space-y-3 flex-1">
+                {p.bullets.map((bullet, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-xs md:text-sm text-white/80 leading-relaxed">
+                    <svg className="w-3.5 h-3.5 text-[var(--neon)] mt-1 shrink-0" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M4.5 3.5L11.5 8L4.5 12.5V3.5Z" />
+                    </svg>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              {p.stack.map((s) => (
-                <span key={s} className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 font-mono text-[11px] text-muted-foreground">
-                  {s}
-                </span>
-              ))}
-            </div>
-
-            <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-[var(--neon)]/10 blur-3xl opacity-0 transition duration-500 group-hover:opacity-100" />
           </article>
         ))}
       </div>

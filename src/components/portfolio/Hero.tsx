@@ -6,7 +6,12 @@ const stats = [
   { label: "AI Projects", value: "12+" },
   { label: "Internships", value: "6" },
   { label: "Industry Certifications", value: "11" },
-  { label: "LeetCode Solved", value: "850+" },
+  { 
+    label: "LeetCode Solved", 
+    value: "880+",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png",
+    link: "https://leetcode.com/megavarshan"
+  },
 ];
 
 export function Hero() {
@@ -111,12 +116,27 @@ export function Hero() {
         transition={{ duration: 0.7, delay: 0.6 }}
         className="mt-16 grid w-full max-w-4xl grid-cols-2 gap-3 md:grid-cols-4"
       >
-        {stats.map((s) => (
-          <div key={s.label} className="glass glow-border rounded-2xl p-4 text-center">
-            <div className="font-display text-3xl font-semibold text-gradient">{s.value}</div>
-            <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{s.label}</div>
-          </div>
-        ))}
+        {stats.map((s) => {
+          const Content = (
+            <>
+              <div className="flex items-center justify-center gap-2 mb-1">
+                {s.icon && <img src={s.icon} alt={s.label} className="w-5 h-5 object-contain filter invert brightness-0" />}
+                <div className="font-display text-3xl font-semibold text-gradient">{s.value}</div>
+              </div>
+              <div className="text-xs uppercase tracking-wider text-muted-foreground">{s.label}</div>
+            </>
+          );
+
+          return s.link ? (
+            <a key={s.label} href={s.link} target="_blank" rel="noreferrer" className="glass glow-border rounded-2xl p-4 text-center transition hover:bg-white/5 hover:-translate-y-1 block cursor-pointer">
+              {Content}
+            </a>
+          ) : (
+            <div key={s.label} className="glass glow-border rounded-2xl p-4 text-center block">
+              {Content}
+            </div>
+          );
+        })}
       </motion.div>
 
       <style>{`

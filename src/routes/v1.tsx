@@ -8,11 +8,11 @@ import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
 import { Certifications } from "@/components/portfolio/Certifications";
 import { Achievements } from "@/components/portfolio/Achievements";
-
+import { LeetCodeSection } from "@/components/portfolio/LeetCodeSection";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/v1")({
   head: () => ({
     meta: [
       { title: "Megavarshan A — AI Engineer & ML Developer" },
@@ -23,6 +23,8 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
+
+import { VersionSwitcher } from "@/components/portfolio-v2/VersionSwitcher";
 
 function Index() {
   return (
@@ -36,9 +38,10 @@ function Index() {
       <Skills />
       <Certifications />
       <Achievements />
-
+      <LeetCodeSection />
       <Contact />
       <Footer />
+      <VersionSwitcher currentVersion="v1" />
     </main>
   );
 }

@@ -28,11 +28,31 @@ const certs: Cert[] = [
   { name: "Salesforce Certified AgentForce Specialist", issuer: "Salesforce", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg", credentialId: "7282784", link: "https://trailhead.salesforce.com/en/credentials/verification/", issueDate: "December 26, 2025", expiryDate: "No Expiration" },
 ];
 
+const TOP_5_CERTS = [
+  "Microsoft Certified: Azure AI Engineer Associate",
+  "OCI 2025 Certified Generative AI Professional",
+  "SAP Certified - Data Analyst - SAP Analytics Cloud",
+  "Salesforce Certified AgentForce Specialist",
+  "AWS Certified Cloud Practitioner"
+];
+
 export function Certifications() {
   const [selectedCert, setSelectedCert] = useState<Cert | null>(null);
+  const [showAllCerts, setShowAllCerts] = useState(false);
 
-  // Group certificates by issuer
-  const groupedCerts = certs.reduce((acc, cert) => {
+  const displayCerts = showAllCerts ? certs : certs.filter(c => TOP_5_CERTS.includes(c.name));
+
+  // Group certificates by issuer using ALL certs to ensure correct counts
+  const fullGroupedCerts = certs.reduce((acc, cert) => {
+    if (!acc[cert.issuer]) {
+      acc[cert.issuer] = { logo: cert.logo, certs: [] };
+    }
+    acc[cert.issuer].certs.push(cert);
+    return acc;
+  }, {} as Record<string, { logo?: string; certs: Cert[] }>);
+
+  // Group certificates for display
+  const groupedCerts = displayCerts.reduce((acc, cert) => {
     if (!acc[cert.issuer]) {
       acc[cert.issuer] = { logo: cert.logo, certs: [] };
     }
@@ -79,7 +99,7 @@ export function Certifications() {
                 <div>
                   <h3 className="font-display font-semibold text-xl tracking-tight">{issuer}</h3>
                   <div className="text-xs text-[var(--neon)] uppercase tracking-wider font-mono mt-0.5">
-                    {data.certs.length} Certification{data.certs.length > 1 ? 's' : ''}
+                    {fullGroupedCerts[issuer].certs.length} Certification{fullGroupedCerts[issuer].certs.length > 1 ? 's' : ''}
                   </div>
                 </div>
               </div>
@@ -93,8 +113,13 @@ export function Certifications() {
                     className="flex items-start gap-3 text-left p-3 rounded-lg hover:bg-white/5 transition-colors border border-transparent hover:border-white/10 group"
                   >
                     <Award className="h-4 w-4 mt-0.5 text-muted-foreground group-hover:text-[var(--neon)] transition-colors shrink-0" />
-                    <span className="text-sm font-medium text-white/80 group-hover:text-white transition-colors leading-snug">
-                      {cert.name}
+                    <span className="flex-1 text-sm font-medium text-white/80 group-hover:text-white transition-colors leading-snug flex items-center justify-between">
+                      <span>{cert.name}</span>
+                      {!showAllCerts && issuer === "Oracle" && cert.name.includes("Generative AI") && (
+                        <span className="ml-2 inline-flex items-center justify-center bg-blue-500/20 text-blue-400 border border-blue-500/30 text-[10px] px-2 py-0.5 rounded-full font-bold whitespace-nowrap">
+                          +5
+                        </span>
+                      )}
                     </span>
                   </button>
                 ))}
@@ -102,6 +127,16 @@ export function Certifications() {
             </GlowCard>
           );
         })}
+      </div>
+
+      <div className="mt-12 flex justify-center">
+        <button 
+          onClick={() => setShowAllCerts(!showAllCerts)}
+          className="group inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-6 py-3 text-sm font-medium transition hover:bg-white/10 hover:border-white/20 cursor-pointer"
+        >
+          <Award className="h-4 w-4 text-[var(--neon)]" />
+          {showAllCerts ? "Show Less" : "View 10+ Certifications"}
+        </button>
       </div>
 
       {/* Glassmorphism Popup Modal */}
