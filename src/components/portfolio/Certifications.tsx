@@ -58,7 +58,7 @@ export function Certifications() {
   return (
     <Section
       id="certifications"
-      eyebrow="Certifications"
+      eyebrow="13 Industry Certifications"
       title={<>Verified Across <span className="text-gradient">AI, Data & Cloud</span>.</>}
     >
       {/* Filters */}

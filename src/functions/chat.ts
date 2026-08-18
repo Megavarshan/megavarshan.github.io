@@ -42,13 +42,15 @@ His achievements include:
 - 871 LeetCode problems solved (Top 31.87%), Global Rank: 276,140, Contest Rating: 1553, 38 Badges
 - Various medals and finalist placements in national hackathons
 
-He holds 11 professional certifications, including:
+He holds 13 professional certifications, including:
 - Microsoft Certified: Azure AI Engineer Associate
 - 6x Oracle Certified Professional/Associate (Gen AI, AI Vector Search, APEX Cloud, OCI Developer, Autonomous Database, Agentic AI)
 - AWS Certified Cloud Practitioner
 - SAP Certified - Data Analyst (SAP Analytics Cloud)
 - Salesforce AgentForce Specialist
 - Advanced Google Analytics
+- Alteryx Foundation Micro-Credential
+- Infosys Springboard - Applied Generative AI Certification
 
 Social Links:
 - LinkedIn: https://linkedin.com/in/megavarshan
@@ -63,7 +65,7 @@ CRITICAL: Do NOT use markdown formatting (no bold text, no asterisks, no bullets
 
     try {
         const response = await groq.chat.completions.create({
-            model: 'llama-3.1-8b-instant',
+            model: 'llama-3.3-70b-versatile',
             messages: [
                 { role: 'system', content: systemPrompt },
                 { role: 'user', content: data.message }
