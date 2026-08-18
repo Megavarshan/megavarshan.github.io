@@ -19,6 +19,7 @@ export function Chatbot() {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [hasSelectedOption, setHasSelectedOption] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -40,8 +41,9 @@ export function Chatbot() {
   }, [isOpen]);
 
   const handleQuickAction = (action: string) => {
+    setHasSelectedOption(true);
     if (action === "Custom") {
-      document.getElementById("chatbot-input")?.focus();
+      setTimeout(() => document.getElementById("chatbot-input")?.focus(), 0);
     } else {
       setInput(action);
       handleSendText(action);
@@ -175,7 +177,17 @@ export function Chatbot() {
                       {msg.sender === "user" ? (
                         msg.text
                       ) : (
-                        <ReactMarkdown>{msg.text}</ReactMarkdown>
+                        <ReactMarkdown
+                          className="space-y-2"
+                          components={{
+                            ul: ({node, ...props}) => <ul className="list-disc pl-4 space-y-1" {...props} />,
+                            ol: ({node, ...props}) => <ol className="list-decimal pl-4 space-y-1" {...props} />,
+                            p: ({node, ...props}) => <p className="leading-relaxed" {...props} />,
+                            strong: ({node, ...props}) => <strong className="font-semibold" {...props} />,
+                          }}
+                        >
+                          {msg.text}
+                        </ReactMarkdown>
                       )}
                     </div>
                   </div>
@@ -220,13 +232,13 @@ export function Chatbot() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Ask me anything..."
-                  className="flex-1 bg-transparent text-sm text-white placeholder:text-muted-foreground focus:outline-none"
-                  disabled={isLoading}
+                  placeholder={hasSelectedOption ? "Ask me anything..." : "Select an option above to begin..."}
+                  className="flex-1 bg-transparent text-sm text-white placeholder:text-muted-foreground focus:outline-none disabled:opacity-50"
+                  disabled={isLoading || !hasSelectedOption}
                 />
                 <button
                   onClick={handleSend}
-                  disabled={!input.trim() || isLoading}
+                  disabled={!input.trim() || isLoading || !hasSelectedOption}
                   className="text-[var(--neon)] transition-colors hover:text-white disabled:opacity-50"
                 >
                   <Send className="h-4 w-4" />
