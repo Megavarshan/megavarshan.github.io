@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { MessageSquare, X, Send } from "lucide-react";
+import { MessageSquare, X, Send, Maximize2, Minimize2 } from "lucide-react";
 import { chatWithMegaBot } from "../../functions/chat";
+import ReactMarkdown from 'react-markdown';
 
 type Message = {
   id: number;
@@ -11,6 +12,7 @@ type Message = {
 
 export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     { id: 1, text: "Hi there! I'm Meg.AI Assistant, an AI clone of Megavarshan. Ask me anything about his experience, skills, or projects!", sender: "bot" }
@@ -20,8 +22,12 @@ export function Chatbot() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, isLoading]);
+    // Only auto-scroll to bottom when user sends a message (isLoading becomes true)
+    // When the bot responds (isLoading becomes false), it stays anchored so they can read from the top
+    if (isLoading) {
+      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [isLoading]);
 
   useEffect(() => {
     // Show tooltip quickly, and don't auto hide it so the user definitely sees it
@@ -33,10 +39,19 @@ export function Chatbot() {
     if (isOpen) setShowTooltip(false);
   }, [isOpen]);
 
-  const handleSend = async () => {
-    if (!input.trim() || isLoading) return;
+  const handleQuickAction = (action: string) => {
+    if (action === "Custom") {
+      document.getElementById("chatbot-input")?.focus();
+    } else {
+      setInput(action);
+      handleSendText(action);
+    }
+  };
 
-    const userMsg: Message = { id: Date.now(), text: input.trim(), sender: "user" };
+  const handleSendText = async (textToSend: string) => {
+    if (!textToSend.trim() || isLoading) return;
+
+    const userMsg: Message = { id: Date.now(), text: textToSend.trim(), sender: "user" };
     setMessages((prev) => [...prev, userMsg]);
     setInput("");
     setIsLoading(true);
@@ -50,6 +65,8 @@ export function Chatbot() {
       setIsLoading(false);
     }
   };
+
+  const handleSend = () => handleSendText(input);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") handleSend();
@@ -110,38 +127,76 @@ export function Chatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 right-6 z-50 flex h-[450px] w-[350px] flex-col overflow-hidden rounded-2xl bg-[#030917] border border-[var(--border)] shadow-2xl"
+            className={`fixed z-50 flex flex-col overflow-hidden rounded-2xl bg-[#030917] border border-[var(--border)] shadow-2xl transition-all duration-300 ${
+              isExpanded 
+                ? "bottom-6 right-6 left-6 md:left-auto md:w-[600px] h-[85vh]" 
+                : "bottom-24 right-6 w-[350px] h-[450px]"
+            }`}
           >
             {/* Header */}
             <div className="flex items-center gap-3 border-b border-[var(--border)] bg-[#0a1526] p-4">
               <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full ring-2 ring-[var(--neon)]">
                 <img src="/mascot.png" alt="Meg.AI Avatar" className="h-full w-full object-cover" />
               </div>
-              <div>
+              <div className="flex-1">
                 <h3 className="font-display font-semibold text-white">Meg.AI Assistant</h3>
                 <div className="flex items-center gap-1.5 text-xs text-[var(--neon)]">
                   <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--neon)]" />
                   Online
                 </div>
               </div>
+              <button 
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-white/50 hover:text-white transition-colors p-1"
+                title={isExpanded ? "Minimize" : "Maximize"}
+              >
+                {isExpanded ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
+              </button>
+              <button 
+                onClick={() => setIsOpen(false)}
+                className="text-white/50 hover:text-[var(--neon)] transition-colors p-1"
+              >
+                <X className="h-5 w-5" />
+              </button>
             </div>
 
             {/* Messages Area */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
-              {messages.map((msg) => (
-                <div
-                  key={msg.id}
-                  className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
-                >
-                  <div
-                    className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm font-medium shadow-sm ${
-                      msg.sender === "user"
-                        ? "bg-gradient-to-r from-[var(--neon)] to-[#0ea5e9] text-white rounded-br-sm"
-                        : "bg-[#f8fafc] text-[#0f172a] rounded-bl-sm"
-                    }`}
-                  >
-                    {msg.text}
+              {messages.map((msg, idx) => (
+                <div key={msg.id} className="flex flex-col gap-2">
+                  <div className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}>
+                    <div
+                      className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm font-medium shadow-sm ${
+                        msg.sender === "user"
+                          ? "bg-gradient-to-r from-[var(--neon)] to-[#0ea5e9] text-white rounded-br-sm"
+                          : "bg-[#f8fafc] text-[#0f172a] rounded-bl-sm prose prose-sm max-w-none prose-p:leading-relaxed prose-pre:bg-[#e2e8f0] prose-pre:text-black"
+                      }`}
+                    >
+                      {msg.sender === "user" ? (
+                        msg.text
+                      ) : (
+                        <ReactMarkdown>{msg.text}</ReactMarkdown>
+                      )}
+                    </div>
                   </div>
+                  
+                  {/* Render Quick Actions after the very first bot welcome message */}
+                  {idx === 0 && msg.sender === "bot" && messages.length === 1 && (
+                    <div className="flex flex-col gap-2 mt-2">
+                      <p className="text-xs text-white/50 font-medium px-2">What would you like to know today?</p>
+                      <div className="flex flex-wrap gap-2 px-2">
+                        {["Varshan's Skillset", "His Experience", "His Interests", "Custom"].map((action) => (
+                          <button
+                            key={action}
+                            onClick={() => handleQuickAction(action)}
+                            className="bg-white/5 border border-white/10 hover:bg-[var(--neon)]/20 hover:border-[var(--neon)]/50 hover:text-white transition-colors text-white/80 text-xs px-3 py-1.5 rounded-full"
+                          >
+                            {action}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
               {isLoading && (
@@ -160,6 +215,7 @@ export function Chatbot() {
             <div className="border-t border-[var(--border)] bg-[#0a1526] p-3">
               <div className="flex items-center gap-2 rounded-full bg-black/40 px-4 py-2 ring-1 ring-[var(--border)] focus-within:ring-[var(--neon)]">
                 <input
+                  id="chatbot-input"
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
