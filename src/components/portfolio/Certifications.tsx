@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Section } from "./Section";
-import { ShieldCheck, X, ExternalLink, Calendar, CheckCircle2, Award } from "lucide-react";
+import { ShieldCheck, X, ExternalLink, Calendar, CheckCircle2, Award, ChevronRight } from "lucide-react";
 import { GlowCard } from "./GlowCard";
 import * as Dialog from "@radix-ui/react-dialog";
 
@@ -26,39 +26,34 @@ const certs: Cert[] = [
   { name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg", link: "https://www.credly.com/badges/f0e3e651-9a3c-4355-bff9-df63831f139d/public_url", issueDate: "August 24, 2025", expiryDate: "August 24, 2028" },
   { name: "SAP Certified - Data Analyst - SAP Analytics Cloud", issuer: "SAP", logo: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg", link: "https://www.credly.com/badges/aee95b54-a4a5-45b3-a0d8-f9d909341ed3", issueDate: "April 20, 2026", expiryDate: "April 21, 2027" },
   { name: "Salesforce Certified AgentForce Specialist", issuer: "Salesforce", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg", credentialId: "7282784", link: "https://trailhead.salesforce.com/en/credentials/verification/", issueDate: "December 26, 2025", expiryDate: "No Expiration" },
+  { name: "Alteryx Foundation Micro-Credential", issuer: "Alteryx", link: "https://www.credly.com/earner/earned/badge/b05d01e7-9797-4302-8c87-aa90e4cecbe3", issueDate: "May 4, 2025", expiryDate: "May 4, 2027" },
+  { name: "Infosys Springboard - Applied Generative AI Certification", issuer: "Infosys", logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg", link: "https://drive.google.com/file/d/1q8dkbmQmtvyA1GZsVtOJaggPRmgdxPYd/view?usp=drive_link", issueDate: "June 18, 2024", expiryDate: "No Expiration", credentialId: "Certificate of Achievement" },
 ];
 
-const TOP_5_CERTS = [
+const TOP_PICKS_CERTS = [
   "Microsoft Certified: Azure AI Engineer Associate",
   "OCI 2025 Certified Generative AI Professional",
   "SAP Certified - Data Analyst - SAP Analytics Cloud",
   "Salesforce Certified AgentForce Specialist",
-  "AWS Certified Cloud Practitioner"
+  "AWS Certified Cloud Practitioner",
+  "Infosys Springboard - Applied Generative AI Certification"
 ];
 
 export function Certifications() {
   const [selectedCert, setSelectedCert] = useState<Cert | null>(null);
-  const [showAllCerts, setShowAllCerts] = useState(false);
+  const [activeFilter, setActiveFilter] = useState<string>("Top Picks");
 
-  const displayCerts = showAllCerts ? certs : certs.filter(c => TOP_5_CERTS.includes(c.name));
+  const issuers = Array.from(new Set(certs.map(c => c.issuer)));
+  const filters = ["Top Picks", "All", ...issuers];
 
-  // Group certificates by issuer using ALL certs to ensure correct counts
-  const fullGroupedCerts = certs.reduce((acc, cert) => {
-    if (!acc[cert.issuer]) {
-      acc[cert.issuer] = { logo: cert.logo, certs: [] };
-    }
-    acc[cert.issuer].certs.push(cert);
-    return acc;
-  }, {} as Record<string, { logo?: string; certs: Cert[] }>);
+  const filteredCerts = certs.filter(cert => {
+    if (activeFilter === "Top Picks") return TOP_PICKS_CERTS.includes(cert.name);
+    if (activeFilter === "All") return true;
+    return cert.issuer === activeFilter;
+  });
 
-  // Group certificates for display
-  const groupedCerts = displayCerts.reduce((acc, cert) => {
-    if (!acc[cert.issuer]) {
-      acc[cert.issuer] = { logo: cert.logo, certs: [] };
-    }
-    acc[cert.issuer].certs.push(cert);
-    return acc;
-  }, {} as Record<string, { logo?: string; certs: Cert[] }>);
+  const oracleCerts = certs.filter(c => c.issuer === "Oracle");
+  const oracleLogo = oracleCerts[0]?.logo;
 
   return (
     <Section
@@ -66,77 +61,131 @@ export function Certifications() {
       eyebrow="Certifications"
       title={<>Verified Across <span className="text-gradient">AI, Data & Cloud</span>.</>}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {Object.entries(groupedCerts).map(([issuer, data], groupIndex) => {
-          // Make Oracle (which has 6 certs) span 2 columns and 2 rows for a nicer layout
-          const isLargeGroup = data.certs.length > 3;
-          let spanClass = "col-span-1";
-          if (isLargeGroup) {
-            spanClass = "md:col-span-2 lg:col-span-2 lg:row-span-2";
-          }
-
-          return (
-            <GlowCard 
-              key={issuer} 
-              className={`relative overflow-hidden flex flex-col p-6 bg-white/[0.02] border border-white/5 transition-all duration-300 hover:bg-white/[0.04] ${spanClass}`}
-            >
-              {/* Watermark Logo Background */}
-              {data.logo && (
-                <div className="absolute -bottom-10 -right-10 opacity-[0.03] pointer-events-none grayscale">
-                  <img src={data.logo} alt="" className="w-64 h-64 object-contain" />
-                </div>
-              )}
-
-              {/* Header */}
-              <div className="flex items-center gap-4 mb-6 relative z-10">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-white/5 border border-white/10 p-2.5 backdrop-blur-md">
-                  {data.logo ? (
-                    <img src={data.logo} alt={issuer} className="h-full w-full object-contain filter brightness-0 invert opacity-90" />
-                  ) : (
-                    <ShieldCheck className="h-6 w-6 text-[var(--neon)]" />
-                  )}
-                </div>
-                <div>
-                  <h3 className="font-display font-semibold text-xl tracking-tight">{issuer}</h3>
-                  <div className="text-xs text-[var(--neon)] uppercase tracking-wider font-mono mt-0.5">
-                    {fullGroupedCerts[issuer].certs.length} Certification{fullGroupedCerts[issuer].certs.length > 1 ? 's' : ''}
-                  </div>
-                </div>
-              </div>
-
-              {/* Certifications List */}
-              <div className={`grid gap-3 relative z-10 ${isLargeGroup ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'}`}>
-                {data.certs.map((cert) => (
-                  <button
-                    key={cert.name}
-                    onClick={() => setSelectedCert(cert)}
-                    className="flex items-start gap-3 text-left p-3 rounded-lg hover:bg-white/5 transition-colors border border-transparent hover:border-white/10 group"
-                  >
-                    <Award className="h-4 w-4 mt-0.5 text-muted-foreground group-hover:text-[var(--neon)] transition-colors shrink-0" />
-                    <span className="flex-1 text-sm font-medium text-white/80 group-hover:text-white transition-colors leading-snug flex items-center justify-between">
-                      <span>{cert.name}</span>
-                      {!showAllCerts && issuer === "Oracle" && cert.name.includes("Generative AI") && (
-                        <span className="ml-2 inline-flex items-center justify-center bg-blue-500/20 text-blue-400 border border-blue-500/30 text-[10px] px-2 py-0.5 rounded-full font-bold whitespace-nowrap">
-                          +5
-                        </span>
-                      )}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </GlowCard>
-          );
-        })}
+      {/* Filters */}
+      <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+        {filters.map((filter) => (
+          <button
+            key={filter}
+            onClick={() => setActiveFilter(filter)}
+            className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border ${
+              activeFilter === filter
+                ? "bg-[var(--neon)] text-black border-[var(--neon)] shadow-[0_0_15px_rgba(139,92,246,0.3)]"
+                : "bg-white/[0.03] text-white/70 border-white/10 hover:bg-white/[0.08] hover:text-white"
+            }`}
+          >
+            {filter}
+            {filter === "Top Picks" && <Award className="inline-block ml-2 w-4 h-4" />}
+          </button>
+        ))}
       </div>
 
-      <div className="mt-12 flex justify-center">
-        <button 
-          onClick={() => setShowAllCerts(!showAllCerts)}
-          className="group inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-6 py-3 text-sm font-medium transition hover:bg-white/10 hover:border-white/20 cursor-pointer"
-        >
-          <Award className="h-4 w-4 text-[var(--neon)]" />
-          {showAllCerts ? "Show Less" : "View 10+ Certifications"}
-        </button>
+      {/* Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {activeFilter === "All" && oracleCerts.length > 0 && (
+          <GlowCard 
+            key="Oracle-Group" 
+            className="relative overflow-hidden flex flex-col p-6 bg-white/[0.02] border border-white/5 transition-all duration-300 hover:bg-white/[0.04] md:col-span-2 lg:col-span-2 lg:row-span-2"
+          >
+            {/* Watermark Logo Background */}
+            {oracleLogo && (
+              <div className="absolute -bottom-10 -right-10 opacity-[0.03] pointer-events-none grayscale">
+                <img src={oracleLogo} alt="" className="w-64 h-64 object-contain" />
+              </div>
+            )}
+
+            {/* Header */}
+            <div className="flex items-center gap-4 mb-6 relative z-10">
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-white/5 border border-white/10 p-2.5 backdrop-blur-md">
+                {oracleLogo ? (
+                  <img src={oracleLogo} alt="Oracle" className="h-full w-full object-contain filter brightness-0 invert opacity-90" />
+                ) : (
+                  <ShieldCheck className="h-6 w-6 text-[var(--neon)]" />
+                )}
+              </div>
+              <div>
+                <h3 className="font-display font-semibold text-xl tracking-tight">Oracle</h3>
+                <div className="text-xs text-[var(--neon)] uppercase tracking-wider font-mono mt-0.5">
+                  {oracleCerts.length} Certifications
+                </div>
+              </div>
+            </div>
+
+            {/* Certifications List */}
+            <div className="grid gap-3 relative z-10 grid-cols-1 sm:grid-cols-2">
+              {oracleCerts.map((cert) => (
+                <button
+                  key={cert.name}
+                  onClick={() => setSelectedCert(cert)}
+                  className="flex items-start gap-3 text-left p-3 rounded-lg hover:bg-white/5 transition-colors border border-transparent hover:border-white/10 group"
+                >
+                  <Award className="h-4 w-4 mt-0.5 text-muted-foreground group-hover:text-[var(--neon)] transition-colors shrink-0" />
+                  <span className="flex-1 text-sm font-medium text-white/80 group-hover:text-white transition-colors leading-snug">
+                    {cert.name}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </GlowCard>
+        )}
+
+        {filteredCerts.filter(cert => activeFilter === "All" ? cert.issuer !== "Oracle" : true).map((cert) => (
+          <GlowCard
+            key={cert.name}
+            onClick={() => setSelectedCert(cert)}
+            className="group relative flex flex-col p-6 bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-all cursor-pointer h-full"
+          >
+            {/* Background Logo Watermark */}
+            {cert.logo && (
+              <div className="absolute top-4 right-4 opacity-[0.05] group-hover:opacity-[0.15] transition-opacity pointer-events-none grayscale">
+                <img src={cert.logo} alt="" className="w-16 h-16 object-contain" />
+              </div>
+            )}
+
+            <div className="relative z-10 flex flex-col h-full pointer-events-none">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="grid h-10 w-10 place-items-center rounded-lg bg-white/5 border border-white/10 p-2">
+                  {cert.logo ? (
+                    <img src={cert.logo} alt={cert.issuer} className="h-full w-full object-contain filter brightness-0 invert" />
+                  ) : (
+                    <ShieldCheck className="h-5 w-5 text-[var(--neon)]" />
+                  )}
+                </div>
+                <div className="text-xs text-[var(--neon)] uppercase tracking-wider font-mono">
+                  {cert.issuer}
+                </div>
+                {activeFilter === "Top Picks" && cert.issuer === "Oracle" && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveFilter("All");
+                    }}
+                    className="ml-auto pointer-events-auto inline-flex items-center justify-center bg-[var(--neon)]/10 text-[var(--neon)] border border-[var(--neon)]/20 text-xs px-2.5 py-0.5 rounded-full font-bold hover:bg-[var(--neon)]/20 transition-colors cursor-pointer"
+                  >
+                    +5
+                  </button>
+                )}
+              </div>
+
+              <h3 className="font-display font-semibold text-lg leading-snug mb-4 group-hover:text-[var(--neon)] transition-colors">
+                {cert.name}
+              </h3>
+
+              <div className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between text-sm text-muted-foreground">
+                <span className="flex items-center gap-1.5">
+                  {cert.issueDate && (
+                    <>
+                      <Calendar className="w-4 h-4" />
+                      {cert.issueDate}
+                    </>
+                  )}
+                </span>
+                <span className="flex items-center text-[var(--neon)] opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0 duration-300">
+                  View Details <ChevronRight className="w-4 h-4 ml-1" />
+                </span>
+              </div>
+            </div>
+          </GlowCard>
+        ))}
       </div>
 
       {/* Glassmorphism Popup Modal */}
