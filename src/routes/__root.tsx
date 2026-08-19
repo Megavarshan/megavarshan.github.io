@@ -118,6 +118,7 @@ function RootShell({ children }: { children: ReactNode }) {
 import { ParticleBackground } from "../components/portfolio/ParticleBackground";
 import { Chatbot } from "../components/portfolio/Chatbot";
 import { CustomCursor } from "../components/CustomCursor";
+import { Analytics } from "@vercel/analytics/react";
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -129,6 +130,7 @@ function RootComponent() {
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
       <Chatbot />
+      <Analytics />
     </QueryClientProvider>
   );
 }
