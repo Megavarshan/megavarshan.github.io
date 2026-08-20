@@ -14,6 +14,7 @@ const links = [
 
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   return (
     <Section
@@ -60,63 +61,84 @@ export function Contact() {
           </a>
         </div>
 
-        <form
-          onSubmit={async (e) => {
-            e.preventDefault();
-            setIsSubmitting(true);
-            const formData = new FormData(e.currentTarget);
-            formData.append("access_key", "c40b7236-35a9-4547-8827-bd5a77caac76");
+        <div className="glass glow-border rounded-3xl p-7 lg:col-span-3 flex flex-col justify-center min-h-[400px]">
+          {isSubmitted ? (
+            <div className="text-center space-y-6">
+              <div className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">// transmission successful</div>
+              <div className="space-y-2">
+                <h3 className="text-2xl font-medium text-[var(--neon)]">Thank you for reaching out.</h3>
+                <p className="text-muted-foreground text-sm max-w-md mx-auto leading-relaxed">
+                  I appreciate your interest. Your message has been received, and I will get back to you promptly to discuss further.
+                </p>
+              </div>
+              <button
+                onClick={() => setIsSubmitted(false)}
+                className="mt-4 inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-medium transition hover:border-[var(--neon)]/40 hover:bg-white/[0.05]"
+              >
+                Send another message →
+              </button>
+            </div>
+          ) : (
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+                setIsSubmitting(true);
+                const formData = new FormData(e.currentTarget);
+                formData.append("access_key", "c40b7236-35a9-4547-8827-bd5a77caac76");
 
-            try {
-              const res = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                  Accept: "application/json"
-                },
-                body: JSON.stringify(Object.fromEntries(formData))
-              }).then((res) => res.json());
+                try {
+                  const res = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                      Accept: "application/json"
+                    },
+                    body: JSON.stringify(Object.fromEntries(formData))
+                  }).then((res) => res.json());
 
-              if (res.success) {
-                toast.success("Message sent successfully!");
-                (e.target as HTMLFormElement).reset();
-              } else {
-                toast.error(res.message || "Failed to send message.");
-              }
-            } catch (error) {
-              toast.error("An error occurred. Please try again later.");
-            } finally {
-              setIsSubmitting(false);
-            }
-          }}
-          className="glass glow-border rounded-3xl p-7 lg:col-span-3"
-        >
-          <div className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">// transmit message</div>
-          <div className="mt-5 grid gap-4 md:grid-cols-2">
-            <Field label="Name" name="name" placeholder="Your name" required />
-            <Field label="Email" name="email" type="email" placeholder="you@company.com" required />
-          </div>
-          <div className="mt-4">
-            <Field label="Subject" name="subject" placeholder="What's this about?" required />
-          </div>
-          <div className="mt-4">
-            <label className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Message</label>
-            <textarea
-              name="message"
-              rows={5}
-              placeholder="Tell me about the role or project..."
-              required
-              className="mt-2 w-full resize-none rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm outline-none transition placeholder:text-muted-foreground/60 focus:border-[var(--neon)]/60 focus:bg-white/[0.05]"
-            />
-          </div>
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="mt-5 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[var(--neon)] to-[var(--cyan-glow)] px-5 py-3 text-sm font-medium text-[oklch(0.13_0.02_270)] shadow-[var(--shadow-glow)] transition hover:shadow-[var(--shadow-glow-strong)] disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isSubmitting ? "Sending..." : "Send message →"}
-          </button>
-        </form>
+                  if (res.success) {
+                    toast.success("Message sent successfully!");
+                    (e.target as HTMLFormElement).reset();
+                    setIsSubmitted(true);
+                  } else {
+                    toast.error(res.message || "Failed to send message.");
+                  }
+                } catch (error) {
+                  toast.error("An error occurred. Please try again later.");
+                } finally {
+                  setIsSubmitting(false);
+                }
+              }}
+              className="flex flex-col h-full"
+            >
+              <div className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">// transmit message</div>
+              <div className="mt-5 grid gap-4 md:grid-cols-2">
+                <Field label="Name" name="name" placeholder="Your name" required />
+                <Field label="Email" name="email" type="email" placeholder="you@company.com" required />
+              </div>
+              <div className="mt-4">
+                <Field label="Subject" name="subject" placeholder="What's this about?" required />
+              </div>
+              <div className="mt-4 flex-1">
+                <label className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Message</label>
+                <textarea
+                  name="message"
+                  rows={5}
+                  placeholder="Tell me about the role or project..."
+                  required
+                  className="mt-2 w-full h-[calc(100%-1.5rem)] min-h-[120px] resize-none rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm outline-none transition placeholder:text-muted-foreground/60 focus:border-[var(--neon)]/60 focus:bg-white/[0.05]"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="mt-5 inline-flex w-fit items-center gap-2 rounded-xl bg-gradient-to-r from-[var(--neon)] to-[var(--cyan-glow)] px-5 py-3 text-sm font-medium text-[oklch(0.13_0.02_270)] shadow-[var(--shadow-glow)] transition hover:shadow-[var(--shadow-glow-strong)] disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? "Sending..." : "Send message →"}
+              </button>
+            </form>
+          )}
+        </div>
       </div>
     </Section>
   );
