@@ -87,7 +87,7 @@ export function Chatbot() {
             onClick={() => setIsOpen(true)}
           >
             <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full ring-2 ring-[var(--neon)]">
-               <img src="/mascot.png" alt="Meg.AI Avatar" className="h-full w-full object-cover" />
+               <img src="/meg-ai-logo.jpg" alt="Meg.AI Avatar" className="h-full w-full object-cover" />
             </div>
             <div className="flex flex-col">
                <span className="text-xs font-semibold uppercase tracking-wider text-[var(--neon)]">Online</span>
@@ -138,7 +138,7 @@ export function Chatbot() {
             {/* Header */}
             <div className="flex items-center gap-3 border-b border-[var(--border)] bg-[#0a1526] p-4">
               <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full ring-2 ring-[var(--neon)]">
-                <img src="/mascot.png" alt="Meg.AI Avatar" className="h-full w-full object-cover" />
+                <img src="/meg-ai-logo.jpg" alt="Meg.AI Avatar" className="h-full w-full object-cover" />
               </div>
               <div className="flex-1">
                 <h3 className="font-display font-semibold text-white">Meg.AI Assistant</h3>
