@@ -26,7 +26,7 @@ const certs: Cert[] = [
   { name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg", link: "https://www.credly.com/badges/f0e3e651-9a3c-4355-bff9-df63831f139d/public_url", issueDate: "August 24, 2025", expiryDate: "August 24, 2028" },
   { name: "SAP Certified - Data Analyst - SAP Analytics Cloud", issuer: "SAP", logo: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg", link: "https://www.credly.com/badges/aee95b54-a4a5-45b3-a0d8-f9d909341ed3", issueDate: "April 20, 2026", expiryDate: "April 21, 2027" },
   { name: "Salesforce Certified AgentForce Specialist", issuer: "Salesforce", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg", credentialId: "7282784", link: "https://trailhead.salesforce.com/en/credentials/verification/", issueDate: "December 26, 2025", expiryDate: "No Expiration" },
-  { name: "Alteryx Foundation Micro-Credential", issuer: "Alteryx", link: "https://www.credly.com/earner/earned/badge/b05d01e7-9797-4302-8c87-aa90e4cecbe3", issueDate: "May 4, 2025", expiryDate: "May 4, 2027" },
+  { name: "Alteryx Foundation Micro-Credential", issuer: "Alteryx", link: "https://www.credly.com/badges/b05d01e7-9797-4302-8c87-aa90e4cecbe3/public_url", issueDate: "May 4, 2025", expiryDate: "May 4, 2027" },
   { name: "Infosys Springboard - Applied Generative AI Certification", issuer: "Infosys", logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg", link: "https://drive.google.com/file/d/1q8dkbmQmtvyA1GZsVtOJaggPRmgdxPYd/view?usp=drive_link", issueDate: "June 18, 2024", expiryDate: "No Expiration", credentialId: "Certificate of Achievement" },
 ];
 
