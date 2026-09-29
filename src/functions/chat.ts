@@ -25,13 +25,17 @@ His core skills span Data Analysis, AI/ML, and Cloud Technologies.
 He attends SRM Institute of Science and Technology.
 Additionally, he attended a winter school on decentralised trusts and blockchain at IIT Madras from Sep 2025 till Dec 2025.
 
-He interned at:
-1. Ganpat University (AI 2D/3D avatars)
-2. InfiniTraq AI (Computer Vision CCTV)
-3. NIT Trichy (Dermoscopic Classification)
-4. ATRIBS Software Systems (Automation workflows)
+He has 6 total internships. He interned at:
+1. Indian Army (AI Research Intern - LLM Evaluation & Computer Vision benchmarking)
+2. SRM Technologies (SDV Software Intern - Vehicle Software Readiness Analyzer)
+3. Ganpat University (AI 2D/3D avatars)
+4. InfiniTraq AI (Computer Vision CCTV)
+5. NIT Trichy (Dermoscopic Classification)
+6. ATRIBS Software Systems (Automation workflows)
 
 He has built projects like:
+- AI Benchmarking System for LLM Evaluation & Computer Vision (Indian Army)
+- Vehicle Software Readiness Analyzer (VSRA) for Software-Defined Vehicles (SRM Technologies)
 - AI-Based Spatial Information System for Disaster Management (ARIES & DRDO)
 - Reducing Road Congestion in Greater Mumbai (IIT Guwahati)
 - Multilingual NLP Analysis
