@@ -4,11 +4,41 @@ import { GlowCard } from "./GlowCard";
 const items = [
   {
     role: "AI Research Intern",
+    subtitle: "LLM Evaluation & Computer Vision",
+    org: "Indian Army",
+    logo: "/indian-army.png",
+    period: "Sep 2026 - Present",
+    color: "oklch(0.75 0.18 60)", // Warm Gold
+    glow: "oklch(0.75 0.18 60 / 0.4)",
+    borderVariant: "tricolor" as const,
+    points: [
+      "Working on the design and development of an AI benchmarking system comprising an LLM evaluation test battery and a computer vision object-recognition test set.",
+      "Focused on systematic evaluation and benchmarking of AI capabilities for LLM reasoning, comprehension, and generation quality assessment.",
+    ],
+  },
+  {
+    role: "SDV Software Intern",
+    subtitle: "SDV Platform Deployment Verification Framework",
+    org: "SRM Technologies",
+    logo: "/srmtech.png",
+    period: "Sep 2026 - Present",
+    color: "oklch(0.7 0.2 240)", // Electric Blue
+    glow: "oklch(0.7 0.2 240 / 0.4)",
+    borderVariant: "default" as const,
+    points: [
+      "Working on an intelligent Software-Defined Vehicle (SDV) deployment verification framework — Vehicle Software Readiness Analyzer (VSRA) — that assesses application readiness before deployment.",
+      "Evaluating vehicle compute, memory, storage, network, platform dependencies, cybersecurity compliance, software integrity, access permissions, resource utilization, and service conflicts.",
+      "The framework provides real-time readiness assessments, risk indicators, and deployment recommendations to support safe, secure, and reliable application deployment in SDVs.",
+    ],
+  },
+  {
+    role: "AI Research Intern",
     org: "Ganpat University",
     logo: "/ganpat.png",
     period: "Jan 2026 - Apr 2026",
     color: "var(--neon)", // Cyan
     glow: "var(--neon-soft)",
+    borderVariant: "default" as const,
     points: [
       "Developed an AI-powered single-image 2D/3D avatar generation pipeline using deep learning and computer vision techniques to create stylised avatars, 3D facial reconstructions, and animated outputs.",
       "Optimised the system for efficient execution on low-resource hardware and enhanced facial realism through model fine-tuning and real-time customisation of facial parameters for digital avatar applications.",
@@ -21,6 +51,7 @@ const items = [
     period: "Dec 2025 - Jan 2026",
     color: "oklch(0.7 0.22 295)", // Violet
     glow: "oklch(0.7 0.22 295 / 0.35)",
+    borderVariant: "default" as const,
     points: [
       "Worked on real-time CCTV video analytics pipelines for enterprise use cases, including age & gender classification and theft detection using deep learning–based computer vision models.",
       "Built and integrated face and demographic analysis using MiVOLO and DeepFace, and optimized inference using a lightweight MobileNet-based model for edge-friendly deployment.",
@@ -34,6 +65,7 @@ const items = [
     period: "June 2025 - Dec 2025",
     color: "oklch(0.85 0.2 90)", // Amber
     glow: "oklch(0.85 0.2 90 / 0.35)",
+    borderVariant: "default" as const,
     points: [
       "Built ConvNeXt-based deep learning pipelines for dermoscopic image classification.",
       "Designed multi-scale feature fusion combining image features with patient metadata.",
@@ -47,6 +79,7 @@ const items = [
     period: "June 2025 - July 2025",
     color: "oklch(0.75 0.2 150)", // Neon Green
     glow: "oklch(0.75 0.2 150 / 0.35)",
+    borderVariant: "default" as const,
     points: [
       "Built AI-driven automation workflows for enterprise-scale processing.",
       "Developed analytical pipelines that improved business optimization metrics.",
@@ -66,9 +99,10 @@ export function Experience() {
       <ol className="relative space-y-12 before:absolute before:left-4 before:top-2 before:bottom-2 before:w-[2px] before:bg-gradient-to-b before:from-[var(--neon)] before:via-[var(--violet-glow)] before:to-[var(--neon)] md:before:hidden">
         {items.map((it, idx) => {
           const isLeft = idx % 2 === 0;
+          const isTricolor = it.borderVariant === "tricolor";
           return (
             <li 
-              key={it.role} 
+              key={`${it.org}-${it.role}`} 
               className={`relative group pl-12 md:pl-0 md:w-[75%] ${isLeft ? 'md:mr-auto' : 'md:ml-auto'}`}
               style={{ '--item-color': it.color, '--item-glow': it.glow } as React.CSSProperties}
             >
@@ -106,43 +140,118 @@ export function Experience() {
               
               {/* 3D Glass Card Container */}
               <div className={`relative perspective-[1200px] z-10 ${isLeft ? 'md:pr-12' : 'md:pl-12'}`}>
-                <GlowCard className={`p-6 md:p-8 transition-all duration-700 ease-out transform group-hover:-translate-y-2 group-hover:rotate-x-2 ${isLeft ? 'group-hover:-rotate-y-3' : 'group-hover:rotate-y-3'} shadow-[0_15px_35px_rgba(0,0,0,0.5)] group-hover:shadow-[0_20px_50px_var(--item-glow)] group-hover:border-[var(--item-color)]/60 bg-black/50 backdrop-blur-3xl border-[var(--item-color)]/20`}>
-                  <div className={`flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 ${isLeft ? 'md:flex-row-reverse md:text-right' : ''}`}>
-                    <div className="flex-1">
-                      <h3 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-white transition-colors group-hover:text-[var(--item-color)] drop-shadow-md">
-                        {it.role}
-                      </h3>
-                      <div className={`mt-2 font-mono text-xs sm:text-sm uppercase tracking-widest text-[var(--item-color)] flex items-center gap-3 ${isLeft ? 'md:justify-end' : ''}`}>
-                        {!isLeft && <span className="h-px w-6 bg-[var(--item-color)] opacity-70"></span>}
-                        <div className="flex items-center h-14 w-auto max-w-[120px] shrink-0">
-                          <img src={it.logo} alt={it.org} className="h-full w-full object-contain" />
+                {/* Tricolor gradient border wrapper for Indian Army */}
+                {isTricolor && (
+                  <>
+                    <style>{`
+                      @keyframes tricolor-rotate {
+                        0% { --tricolor-angle: 0deg; }
+                        100% { --tricolor-angle: 360deg; }
+                      }
+                      .tricolor-border {
+                        position: relative;
+                      }
+                      .tricolor-border::before {
+                        content: '';
+                        position: absolute;
+                        inset: -2px;
+                        border-radius: 1rem;
+                        padding: 2px;
+                        background: linear-gradient(
+                          var(--tricolor-angle, 0deg),
+                          #FF9933 0%,
+                          #FF9933 25%,
+                          #FFFFFF 35%,
+                          #FFFFFF 50%,
+                          #138808 60%,
+                          #138808 75%,
+                          #FF9933 100%
+                        );
+                        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                        -webkit-mask-composite: xor;
+                        mask-composite: exclude;
+                        animation: tricolor-rotate 4s linear infinite;
+                        opacity: 0.8;
+                        transition: opacity 0.5s;
+                        z-index: 1;
+                      }
+                      .tricolor-border:hover::before {
+                        opacity: 1;
+                        inset: -3px;
+                      }
+                      .tricolor-border::after {
+                        content: '';
+                        position: absolute;
+                        inset: -6px;
+                        border-radius: 1.2rem;
+                        background: linear-gradient(
+                          var(--tricolor-angle, 0deg),
+                          rgba(255, 153, 51, 0.3) 0%,
+                          rgba(255, 255, 255, 0.15) 33%,
+                          rgba(19, 136, 8, 0.3) 66%,
+                          rgba(255, 153, 51, 0.3) 100%
+                        );
+                        filter: blur(12px);
+                        animation: tricolor-rotate 4s linear infinite;
+                        opacity: 0;
+                        transition: opacity 0.5s;
+                        z-index: 0;
+                      }
+                      .tricolor-border:hover::after {
+                        opacity: 1;
+                      }
+                      @property --tricolor-angle {
+                        syntax: '<angle>';
+                        initial-value: 0deg;
+                        inherits: false;
+                      }
+                    `}</style>
+                  </>
+                )}
+                <div className={isTricolor ? 'tricolor-border' : ''}>
+                  <GlowCard className={`p-6 md:p-8 transition-all duration-700 ease-out transform group-hover:-translate-y-2 group-hover:rotate-x-2 ${isLeft ? 'group-hover:-rotate-y-3' : 'group-hover:rotate-y-3'} shadow-[0_15px_35px_rgba(0,0,0,0.5)] group-hover:shadow-[0_20px_50px_var(--item-glow)] ${isTricolor ? '' : 'group-hover:border-[var(--item-color)]/60'} bg-black/50 backdrop-blur-3xl ${isTricolor ? 'border-transparent' : 'border-[var(--item-color)]/20'}`}>
+                    <div className={`flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 ${isLeft ? 'md:flex-row-reverse md:text-right' : ''}`}>
+                      <div className="flex-1">
+                        <h3 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-white transition-colors group-hover:text-[var(--item-color)] drop-shadow-md">
+                          {it.role}
+                        </h3>
+                        {'subtitle' in it && it.subtitle && (
+                          <p className="mt-1 text-xs sm:text-sm text-gray-400 font-medium tracking-wide">
+                            {it.subtitle}
+                          </p>
+                        )}
+                        <div className={`mt-2 font-mono text-xs sm:text-sm uppercase tracking-widest text-[var(--item-color)] flex items-center gap-3 ${isLeft ? 'md:justify-end' : ''}`}>
+                          {!isLeft && <span className="h-px w-6 bg-[var(--item-color)] opacity-70"></span>}
+                          <div className="flex items-center h-14 w-auto max-w-[120px] shrink-0">
+                            <img src={it.logo} alt={it.org} className="h-full w-full object-contain" />
+                          </div>
+                          {it.org}
+                          {isLeft && <span className="hidden md:block h-px w-6 bg-[var(--item-color)] opacity-70"></span>}
                         </div>
-                        {it.org}
-                        {isLeft && <span className="hidden md:block h-px w-6 bg-[var(--item-color)] opacity-70"></span>}
+                      </div>
+                      
+                      {/* Terminal Badge for Date */}
+                      <div className="inline-flex shrink-0 items-center gap-2 rounded bg-[var(--item-color)]/10 px-3 py-1.5 font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[var(--item-color)] border border-[var(--item-color)]/40 shadow-[0_0_15px_var(--item-glow)]">
+                        <span className="relative flex h-1.5 w-1.5">
+                          <span className="animate-ping absolute inset-0 rounded-full bg-[var(--item-color)] opacity-100"></span>
+                          <span className="relative rounded-full h-1.5 w-1.5 bg-[var(--item-color)]"></span>
+                        </span>
+                        {it.period}
                       </div>
                     </div>
                     
-                    {/* Terminal Badge for Date */}
-                    <div className="inline-flex shrink-0 items-center gap-2 rounded bg-[var(--item-color)]/10 px-3 py-1.5 font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[var(--item-color)] border border-[var(--item-color)]/40 shadow-[0_0_15px_var(--item-glow)]">
-                      <span className="relative flex h-1.5 w-1.5">
-                        <span className="animate-ping absolute inset-0 rounded-full bg-[var(--item-color)] opacity-100"></span>
-                        <span className="relative rounded-full h-1.5 w-1.5 bg-[var(--item-color)]"></span>
-                      </span>
-                      {it.period}
-                    </div>
-                  </div>
-                  
-                  <ul className={`mt-6 space-y-3 text-sm sm:text-[15px] text-muted-foreground ${isLeft ? 'md:text-right' : ''}`}>
-                    {it.points.map((p) => (
-                      <li key={p} className={`flex gap-3 items-start group/point ${isLeft ? 'md:flex-row-reverse' : ''}`}>
-                        <span className="font-mono text-[var(--item-color)] opacity-50 shrink-0 mt-0.5 transition-all duration-300 group-hover/point:opacity-100 group-hover/point:scale-125 group-hover/point:drop-shadow-[0_0_5px_var(--item-color)]">
-                          {isLeft ? `<` : `>`}
-                        </span>
-                        <span className="leading-relaxed text-gray-300 group-hover/point:text-white transition-colors">{p}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </GlowCard>
+                    <ul className={`mt-6 space-y-3 text-sm sm:text-[15px] text-muted-foreground ${isLeft ? 'md:text-right' : ''}`}>
+                      {it.points.map((p) => (
+                        <li key={p} className={`flex gap-3 items-start group/point ${isLeft ? 'md:flex-row-reverse' : ''}`}>
+                          <span className="font-mono text-[var(--item-color)] opacity-50 shrink-0 mt-0.5 transition-all duration-300 group-hover/point:opacity-100 group-hover/point:scale-125 group-hover/point:drop-shadow-[0_0_5px_var(--item-color)]">
+                            {isLeft ? `<` : `>`}
+                          </span>
+                          <span className="leading-relaxed text-gray-300 group-hover/point:text-white transition-colors">{p}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </GlowCard>
+                </div>
               </div>
             </li>
           );
